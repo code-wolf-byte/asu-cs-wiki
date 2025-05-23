@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig, passthroughImageService } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import { fileURLToPath } from 'url';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +13,7 @@ export default defineConfig({
 			title: 'ASU CS Wiki',
       customCss: [
         '@fontsource-variable/space-grotesk',
-        fileURLToPath(new URL('./src/styles/custom.css', import.meta.url)),
+        './src/styles/custom.css',
       ],
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/asusoda/asu-cs-wiki' }],
       editLink: {
