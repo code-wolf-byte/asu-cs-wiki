@@ -1,6 +1,6 @@
 ---
-title: Courses
-description: Guides for ASU CS students.
+title: Campus Resources
+description: Campus resources for ASU CS students.
 ---
 
 Hello Sun-Devils! Welcome to the ASU CS Wiki. This is a collection of guides, resources, and information for ASU CS students.

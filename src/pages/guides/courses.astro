@@ -1,0 +1,57 @@
+---
+// Import the `<StarlightPage>` component first to set up cascade layers.
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import AnchorHeading from '@astrojs/starlight/components/AnchorHeading.astro';
+
+// Import the courses data
+import coursesData from '../../data/courses.json';
+---
+
+<StarlightPage frontmatter={{ title: 'Courses', description: 'Guides for ASU CS students.' }}>
+  <p>If you are new to the CS classes, we suggest viewing our scheduling guide!</p>
+
+  {coursesData.map((courseCategory: any) => {
+    return Object.entries(courseCategory).map(([category, courses]: [string, any]) => (
+      <div>
+        <AnchorHeading level="2" id={category.toLowerCase()}>{category}</AnchorHeading>
+        <div class="course-buttons">
+          {(courses as any[]).map((course: any) => (
+            <a href={course.link} class="course-button">
+              {course.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    ));
+  })}
+
+  <AnchorHeading level="2" id="capstone">Capstone</AnchorHeading>
+  <p>These involve applying your skills. <a href="#" class="capstone-link">Read our guide on the capstone classes here!</a></p>
+
+  <style>
+    .course-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .course-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 50px;
+      text-decoration: none;
+      color: black;
+      font-weight: normal;
+      text-align: center;
+      min-width: 100px;
+    }
+
+    .capstone-link {
+      color: #0066cc;
+      text-decoration: none;
+    }
+  </style>
+</StarlightPage>
