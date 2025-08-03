@@ -75,24 +75,34 @@
       }
     </style>
   </head>
-  <body class="bg-bg text-textc font-[Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,'Apple Color Emoji','Segoe UI Emoji'] leading-[1.35]">
+  <body
+    class="bg-bg text-textc font-[Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,'Apple Color Emoji','Segoe UI Emoji'] leading-[1.35]"
+  >
     <div class="max-w-[1200px] mx-auto mt-8 mb-12 px-4">
       <header class="mb-4">
         <div class="flex gap-3.5 items-center mt-2 text-muted text-[13px]">
           <span class="inline-flex items-center gap-1.5">
-            <span class="inline-block w-[14px] h-[10px] rounded-[2px] bg-futureSoft"></span>
+            <span
+              class="inline-block w-[14px] h-[10px] rounded-[2px] bg-futureSoft"
+            ></span>
             Indirect prerequisite
           </span>
           <span class="inline-flex items-center gap-1.5">
-            <span class="inline-block w-[14px] h-[10px] rounded-[2px] bg-pastSoft"></span>
+            <span
+              class="inline-block w-[14px] h-[10px] rounded-[2px] bg-pastSoft"
+            ></span>
             Indirect dependent
           </span>
           <span class="inline-flex items-center gap-1.5">
-            <span class="inline-block w-[14px] h-[10px] rounded-[2px] bg-past"></span>
+            <span
+              class="inline-block w-[14px] h-[10px] rounded-[2px] bg-past"
+            ></span>
             Immediate prerequisite
           </span>
           <span class="inline-flex items-center gap-1.5">
-            <span class="inline-block w-[14px] h-[10px] rounded-[2px] bg-future"></span>
+            <span
+              class="inline-block w-[14px] h-[10px] rounded-[2px] bg-future"
+            ></span>
             Immediate dependent
           </span>
         </div>
@@ -139,14 +149,14 @@
           "HU or SB & AA",
         ],
         "Fall-3": [
-          "SQ LAB SCI 2",
+          "SQ LAB SCI",
           "EEE 120",
           "CSE 240",
           "MAT 267 or CSE 259",
           "MAT 243",
         ],
         "Spring-4": [
-          "SQ LAB SCI 3",
+          "SQ LAB SCI",
           "CSE 230",
           "CSE 310",
           "HU or SB & AA",
@@ -266,6 +276,12 @@
               prerequisites: ["MAT 266"],
               prerequisitesFor: ["CSE 475"],
             },
+            {
+              name: "IEE 380 - Probability and Statistics",
+              link: "/courses/iee-380",
+              prerequisites: ["MAT 266"],
+              prerequisitesFor: ["CSE 472"],
+            },
           ],
         },
         {
@@ -291,14 +307,46 @@
         {
           group: "Electives",
           items: [
-            { name: "CSE 463 - Human Computer Interaction", link: "/courses/cse-463", prerequisites: ["CSE 310"] },
-            { name: "CSE 464 - QA and Testing", link: "/courses/cse-464", prerequisites: ["CSE 310", "CSE 360"] },
-            { name: "CSE 466 - Computer Systems Security", link: "/courses/cse-466", prerequisites: ["CSE 310", "CSE 365"] },
-            { name: "CSE 471 - Intro to Artificial Intelligence", link: "/courses/cse-471", prerequisites: ["CSE 310"] },
-            { name: "CSE 472 - Social Media Mining", link: "/courses/cse-472", prerequisites: ["CSE 310", "IEE 380", "MAT 343"] },
-            { name: "CSE 475 - Intro to Machine Learning", link: "/courses/cse-475", prerequisites: ["CSE 205"] },
-            { name: "CSE 476 - Intro to Natural Language Processing", link: "/courses/cse-476", prerequisites: ["CSE 310"] },
-            { name: "CSE 478 - Intro to Data Visualization", link: "/courses/cse-478", prerequisites: ["CSE 310"] },
+            {
+              name: "CSE 463 - Human Computer Interaction",
+              link: "/courses/cse-463",
+              prerequisites: ["CSE 310"],
+            },
+            {
+              name: "CSE 464 - QA and Testing",
+              link: "/courses/cse-464",
+              prerequisites: ["CSE 310", "CSE 360"],
+            },
+            {
+              name: "CSE 466 - Computer Systems Security",
+              link: "/courses/cse-466",
+              prerequisites: ["CSE 310", "CSE 365"],
+            },
+            {
+              name: "CSE 471 - Intro to Artificial Intelligence",
+              link: "/courses/cse-471",
+              prerequisites: ["CSE 310"],
+            },
+            {
+              name: "CSE 472 - Social Media Mining",
+              link: "/courses/cse-472",
+              prerequisites: ["CSE 310", "IEE 380", "MAT 343"],
+            },
+            {
+              name: "CSE 475 - Intro to Machine Learning",
+              link: "/courses/cse-475",
+              prerequisites: ["CSE 205"],
+            },
+            {
+              name: "CSE 476 - Intro to Natural Language Processing",
+              link: "/courses/cse-476",
+              prerequisites: ["CSE 310"],
+            },
+            {
+              name: "CSE 478 - Intro to Data Visualization",
+              link: "/courses/cse-478",
+              prerequisites: ["CSE 310"],
+            },
           ],
         },
         {
@@ -352,9 +400,7 @@
           const code = getCode(item.name);
           const node = ensureNode(code);
           node.title = item.name.split(" - ").slice(1).join(" - ") || code;
-          if (!item.name.includes(" - ")) {
-            console.log(item.name);
-          }
+          console.log(node.title);
           node.link = item.link || null;
 
           (item.prerequisites || []).forEach((p) => {
@@ -380,8 +426,11 @@
       const gridEl = document.getElementById("termsGrid");
 
       function courseEl(code, labelOverride) {
-        const node =
-          graph.get(code) || ({ code, title: code, prereq: new Set() });
+        const node = graph.get(code) || {
+          code,
+          title: code,
+          prereq: new Set(),
+        };
 
         const el = document.createElement("div");
         el.className =
@@ -391,10 +440,13 @@
 
         el.innerHTML = `
           <div class="font-bold tracking-[0.04em]">${code}</div>
-          <a class="block mt-0.5 text-[13px] text-[#cfe3ff]" ${
-            node.link ? `href="${node.link}" target="_blank"` : ""
-          }>${labelOverride || node.title}</a>
         `;
+
+        if (node.title !== code) {
+          el.innerHTML += `<a class="block mt-0.5 text-[13px] text-[#cfe3ff]" ${
+            node.link ? `href="${node.link}" target="_blank"` : ""
+          }>${labelOverride || node.title}</a>`;
+        }
 
         el.addEventListener("mouseenter", () => highlightFor(code));
         el.addEventListener("mouseleave", () => clearHighlights());
@@ -507,9 +559,11 @@
         const pastLayers = bfsLayers(code, "past");
         const futureLayers = bfsLayers(code, "future");
 
-        document.querySelectorAll(".course").forEach((el) =>
-          el.classList.remove("past", "past-soft", "future", "future-soft")
-        );
+        document
+          .querySelectorAll(".course")
+          .forEach((el) =>
+            el.classList.remove("past", "past-soft", "future", "future-soft")
+          );
 
         if (pastLayers[0])
           pastLayers[0].forEach((c) =>
@@ -543,15 +597,17 @@
       }
 
       function clearHighlights() {
-        document.querySelectorAll(".course").forEach((el) =>
-          el.classList.remove(
-            "past",
-            "past-soft",
-            "future",
-            "future-soft",
-            "activeHover"
-          )
-        );
+        document
+          .querySelectorAll(".course")
+          .forEach((el) =>
+            el.classList.remove(
+              "past",
+              "past-soft",
+              "future",
+              "future-soft",
+              "activeHover"
+            )
+          );
       }
 
       document.addEventListener("click", clearHighlights);
