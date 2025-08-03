@@ -16,7 +16,7 @@ import coursesData from '../../data/courses.json';
         <AnchorHeading level="2" id={category.toLowerCase()}>{category}</AnchorHeading>
         <div class="course-buttons">
           {(courses as any[]).map((course: any) => (
-            <a href={course.link} class="course-button">
+            <a href={course.link} class="course-button" target="_blank">
               {course.name}
             </a>
           ))}
@@ -39,7 +39,7 @@ import coursesData from '../../data/courses.json';
     .course-button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: white;
+      background-color: #fafafa;
       border: 1px solid #ddd;
       border-radius: 50px;
       text-decoration: none;
