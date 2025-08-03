@@ -58,7 +58,7 @@
         "prerequisitesFor": ["CSE 485"]
       },
       {
-        "name": "CSE 340 - Principles of Programming Languages (Compilers)",
+        "name": "CSE 340 - Principles of Programming Languages ",
         "link": "/courses/cse-340",
         "prerequisites": ["CSE 310", "CSE 230"],
         "prerequisitesFor": ["CSE 485"]
@@ -82,11 +82,63 @@
         "prerequisitesFor": []
       }
     ],
+    "Mandatory Electives": [
+      {
+        "name": "CSE 412 - Database Management",
+        "link": "/courses/cse-412",
+        "prerequisites": ["CSE 310"]
+      },
+      {
+        "name": "CSE 434 - Computer Networks",
+        "link": "/courses/cse-434",
+        "prerequisites": ["CSE 310", "CSE 330"]
+      },
+      {
+        "name": "CSE 445 - Software Engineering",
+        "link": "/courses/cse-445",
+        "prerequisites": ["CSE 310", "CSE 360"]
+      }
+    ],
     "Electives": [
+      {
+        "name": "CSE 463 - Human Computer Interaction",
+        "link": "/courses/cse-463",
+        "prerequisites": ["CSE 310"]
+      },
+      {
+        "name": "CSE 464 - QA and Testing",
+        "link": "/courses/cse-464",
+        "prerequisites": ["CSE 310", "CSE 360"]
+      },
+      {
+        "name": "CSE 466 - Computer Systems Security",
+        "link": "/courses/cse-466",
+        "prerequisites": ["CSE 310", "CSE 365"]
+      },
+      {
+        "name": "CSE 471 - Intro to Artificial Intelligence",
+        "link": "/courses/cse-471",
+        "prerequisites": ["CSE 310"]
+      },
+      {
+        "name": "CSE 472 - Social Media Mining",
+        "link": "/courses/cse-472",
+        "prerequisites": ["CSE 310", "IEE 380", "MAT 343"]
+      },
       {
         "name": "CSE 475 - Intro to Machine Learning",
         "link": "/courses/cse-475",
         "prerequisites": ["CSE 205"]
+      },
+      {
+        "name": "CSE 476 - Intro to Natural Language Processing",
+        "link": "/courses/cse-476",
+        "prerequisites": ["CSE 310"]
+      },
+      {
+        "name": "CSE 478 - Intro to Data Visualization",
+        "link": "/courses/cse-478",
+        "prerequisites": ["CSE 310"]
       }
     ],
     "Capstone": [

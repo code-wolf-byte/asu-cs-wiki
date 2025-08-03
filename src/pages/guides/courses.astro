@@ -5,25 +5,48 @@ import AnchorHeading from '@astrojs/starlight/components/AnchorHeading.astro';
 
 // Import the courses data
 import coursesData from '../../data/courses.json';
+
+// Statically import all course files
+const courseFiles = import.meta.glob('../../content/docs/Courses/*.md', { eager: true });
+const existingCourseFiles = Object.keys(courseFiles).map(path => 
+  path.split('/').pop()?.replace('.md', '')
+);
+
+interface Course {
+  name: string;
+  link: string;
+}
+
+interface CourseCategory {
+  [category: string]: Course[];
+}
+
+function doesCourseHaveFile(course: Course): boolean {
+  const courseFileName = course.link.split('/').pop();
+  return existingCourseFiles.includes(courseFileName);
+}
 ---
 
 <StarlightPage frontmatter={{ title: 'Courses', description: 'Guides for ASU CS students.' }}>
-  <p>If you are new to the CS classes, we suggest viewing SCAI's scheduling guide</p>
+  <p>If you are new to the CS classes, we suggest viewing SCAI's <a href="https://degrees.apps.asu.edu/major-map/ASU00/ESCSEBS/null/ALL/2024">scheduling guide</a></p>
 
-  {coursesData.map((courseCategory: any) => {
-    return Object.entries(courseCategory).map(([category, courses]: [string, any]) => (
+  {coursesData.map((courseCategory: CourseCategory) => 
+    Object.entries(courseCategory).map(([category, courses]) => (
       <div>
         <AnchorHeading level="2" id={category.toLowerCase()}>{category}</AnchorHeading>
         <div class="course-buttons">
-          {(courses as any[]).map((course: any) => (
-            <a href={course.link} class="course-button">
+          {courses.map((course) => (
+            <a 
+              href={doesCourseHaveFile(course) ? course.link : ''} 
+              class={`course-button ${doesCourseHaveFile(course) ? 'has-file' : 'file-not-found'}`}
+            >
               {course.name}
             </a>
           ))}
         </div>
       </div>
-    ));
-  })}
+    ))
+  )}
 
   <style>
     .course-buttons {
@@ -47,9 +70,15 @@ import coursesData from '../../data/courses.json';
       transition: background-color 0.1s ease-in-out;
     }
 
-    .course-button:hover {
+    .course-button.has-file:hover {
       background-color: #444;
       transition: background-color 0.1s ease-in-out;
+    }
+
+    .file-not-found {
+      background-color: #333;
+      opacity: 0.8;
+      cursor: not-allowed;
     }
 
     .capstone-link {
