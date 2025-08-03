@@ -21,4 +21,9 @@ export default defineConfig({
       },
 		}),
 	],
+  vite: {
+    ssr: {
+      external: ['nanoid/non-secure']
+    }
+  }
 });
