@@ -1,0 +1,42 @@
+[
+    {
+        "Core": [
+            {
+                "name": "CSE 110",
+                "link": "/courses/cse-110",
+                "prerequisites": [],
+                "prerequisitesFor": [
+                    "CSE 205"
+                ]
+            },
+            {
+                "name": "CSE 205",
+                "link": "/courses/cse-205",
+                "prerequisites": [
+                    "CSE 110"
+                ],
+                "prerequisitesFor": [
+                    "CSE 300"
+                ]
+            }
+        ],
+        "Electives": [
+        {
+            "name": "CSE 300",
+            "link": "/courses/cse-300",
+            "prerequisites": [
+                "CSE 205"
+                ]
+            }
+        ],
+        "Special": [
+            {
+                "name": "CSE 494",
+                "link": "/courses/cse-494",
+                "prerequisites": [
+                    "CSE 205"
+                ]
+            }
+        ]
+    }
+]
