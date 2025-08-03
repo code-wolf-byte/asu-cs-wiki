@@ -16,7 +16,7 @@ import coursesData from '../../data/courses.json';
         <AnchorHeading level="2" id={category.toLowerCase()}>{category}</AnchorHeading>
         <div class="course-buttons">
           {(courses as any[]).map((course: any) => (
-            <a href={course.link} class="course-button" target="_blank">
+            <a href={course.link} class="course-button">
               {course.name}
             </a>
           ))}
@@ -24,9 +24,6 @@ import coursesData from '../../data/courses.json';
       </div>
     ));
   })}
-
-  <AnchorHeading level="2" id="capstone">Capstone</AnchorHeading>
-  <p>These involve applying your skills. <a href="#" class="capstone-link">Read our guide on the capstone classes here!</a></p>
 
   <style>
     .course-buttons {
@@ -39,18 +36,24 @@ import coursesData from '../../data/courses.json';
     .course-button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #fafafa;
-      border: 1px solid #ddd;
+      background-color: #222;
+      border: 1px solid #333;
       border-radius: 50px;
       text-decoration: none;
-      color: black;
+      color: white;
       font-weight: normal;
       text-align: center;
       min-width: 100px;
+      transition: background-color 0.1s ease-in-out;
+    }
+
+    .course-button:hover {
+      background-color: #444;
+      transition: background-color 0.1s ease-in-out;
     }
 
     .capstone-link {
-      color: #0066cc;
+      color: #9E9EFF;
       text-decoration: none;
     }
   </style>

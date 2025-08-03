@@ -32,9 +32,9 @@
         "prerequisitesFor": ["CSE 330", "CSE 340"]
       },
       {
-        "name": "CSE 240 - Introduction to C/C++",
+        "name": "CSE 240 - Introduction to Programming Languages",
         "link": "/courses/cse-240",
-        "prerequisites": [],
+        "prerequisites": ["CSE 205"],
         "prerequisitesFor": ["CSE 310", "CSE 360"]
       }
     ],
