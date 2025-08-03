@@ -12,5 +12,3 @@ Looking for internship opportunities? [Click here](https://github.com/asusoda/as
 Looking for club information? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/clubs-and-orgs)
 
 Looking for research opportunities? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/research-opportunities)
-
-

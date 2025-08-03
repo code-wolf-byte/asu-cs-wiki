@@ -1,194 +1,126 @@
 [
-    {
-        "Core (1xx - 2xx)": [
-            {
-                "name": "CSE 110 - Principles of Programming",
-                "link": "/courses/cse-110",
-                "prerequisites": [],
-                "prerequisitesFor": [
-                    "CSE 205",
-                    "CSE 230"
-                ]
-            },
-            {
-                "name": "FSE 100 - Intro to Engineering",
-                "link": "/courses/fse-100",
-                "prerequisites": [],
-                "prerequisitesFor": [
-                    "CSE 301"
-                ]
-            },
-            {
-                "name": "CSE 120 - Digital Design Fundamentals",
-                "link": "/courses/cse-120",
-                "prerequisites": [],
-                "prerequisitesFor": [
-                    "CSE 230"
-                ]
-            },
-            {
-                "name": "CSE 205 - Object-Oriented Programming in Java",
-                "link": "/courses/cse-205",
-                "prerequisites": [
-                    "CSE 110"
-                ],
-                "prerequisitesFor": [
-                    "CSE 300",
-                    "CSE 301",
-                    "CSE 310",
-                    "CSE 360"
-                ]
-            },
-            {
-                "name": "CSE 230 - Computer Organization and Architecture",
-                "link": "/courses/cse-230",
-                "prerequisites": [
-                    "CSE 110",
-                    "CSE 120"
-                ],
-                "prerequisitesFor": [
-                    "CSE 330",
-                    "CSE 340"
-                ]
-            },
-            {
-                "name": "CSE 240 - Introduction to C/C++",
-                "link": "/courses/cse-240",
-                "prerequisites": [],
-                "prerequisitesFor": [
-                    "CSE 310",
-                    "CSE 360"
-                ]
-            }
+  {
+    "Core (1xx - 2xx)": [
+      {
+        "name": "CSE 110 - Principles of Programming",
+        "link": "/courses/cse-110",
+        "prerequisites": [],
+        "prerequisitesFor": ["CSE 205", "CSE 230"]
+      },
+      {
+        "name": "FSE 100 - Intro to Engineering",
+        "link": "/courses/fse-100",
+        "prerequisites": [],
+        "prerequisitesFor": ["CSE 301"]
+      },
+      {
+        "name": "CSE 120 - Digital Design Fundamentals",
+        "link": "/courses/cse-120",
+        "prerequisites": [],
+        "prerequisitesFor": ["CSE 230"]
+      },
+      {
+        "name": "CSE 205 - Object-Oriented Programming in Java",
+        "link": "/courses/cse-205",
+        "prerequisites": ["CSE 110"],
+        "prerequisitesFor": ["CSE 300", "CSE 301", "CSE 310", "CSE 360"]
+      },
+      {
+        "name": "CSE 230 - Computer Organization and Architecture",
+        "link": "/courses/cse-230",
+        "prerequisites": ["CSE 110", "CSE 120"],
+        "prerequisitesFor": ["CSE 330", "CSE 340"]
+      },
+      {
+        "name": "CSE 240 - Introduction to C/C++",
+        "link": "/courses/cse-240",
+        "prerequisites": [],
+        "prerequisitesFor": ["CSE 310", "CSE 360"]
+      }
+    ],
+    "Core (3xx - 4xx)": [
+      {
+        "name": "CSE 301 - Computing Ethics",
+        "link": "/courses/cse-301",
+        "prerequisites": ["CSE 205", "FSE 100"],
+        "prerequisitesFor": ["CSE 485"]
+      },
+      {
+        "name": "CSE 310 - Data Structures and Algorithms",
+        "link": "/courses/cse-310",
+        "prerequisites": ["CSE 205", "MAT 243/300"],
+        "prerequisitesFor": ["CSE 330", "CSE 340", "CSE 355"]
+      },
+      {
+        "name": "CSE 330 - Operating Systems",
+        "link": "/courses/cse-330",
+        "prerequisites": ["CSE 310", "CSE 230"],
+        "prerequisitesFor": ["CSE 485"]
+      },
+      {
+        "name": "CSE 340 - Principles of Programming Languages (Compilers)",
+        "link": "/courses/cse-340",
+        "prerequisites": ["CSE 310", "CSE 230"],
+        "prerequisitesFor": ["CSE 485"]
+      },
+      {
+        "name": "CSE 355 - Theoretical Computer Science",
+        "link": "/courses/cse-355",
+        "prerequisites": ["CSE 310"],
+        "prerequisitesFor": ["CSE 485"]
+      },
+      {
+        "name": "CSE 360 - Software Engineering",
+        "link": "/courses/cse-360",
+        "prerequisites": ["CSE 240"],
+        "prerequisitesFor": ["CSE 485"]
+      },
+      {
+        "name": "CSE 365 - Information Assurance",
+        "link": "/courses/cse-365",
+        "prerequisites": ["CSE 230", "CSE 310"],
+        "prerequisitesFor": []
+      }
+    ],
+    "Electives": [
+      {
+        "name": "CSE 475 - Intro to Machine Learning",
+        "link": "/courses/cse-475",
+        "prerequisites": ["CSE 205"]
+      }
+    ],
+    "Capstone": [
+      {
+        "name": "CSE 485 - Capstone 1",
+        "link": "/courses/cse-485",
+        "prerequisites": [
+          "CSE 301",
+          "CSE 330",
+          "CSE 340",
+          "CSE 355",
+          "CSE 360",
+          "ENG 107"
         ],
-        "Core (3xx - 4xx)": [
-            {
-                "name": "CSE 301 - Computing Ethics",
-                "link": "/courses/cse-301",
-                "prerequisites": [
-                    "CSE 205",
-                    "FSE 100"
-                ],
-                "prerequisitesFor": [
-                    "CSE 485"
-                ]
-            },
-            {
-                "name": "CSE 310 - Data Structures and Algorithms",
-                "link": "/courses/cse-310",
-                "prerequisites": [
-                    "CSE 205",
-                    "MAT 243/300"
-                ],
-                "prerequisitesFor": [
-                    "CSE 330",
-                    "CSE 340",
-                    "CSE 355"
-                ]
-            },
-            {
-                "name": "CSE 330 - Operating Systems",
-                "link": "/courses/cse-330",
-                "prerequisites": [
-                    "CSE 310",
-                    "CSE 230"
-                ],
-                "prerequisitesFor": [
-                    "CSE 485"
-                ]
-            },
-            {
-                "name": "CSE 340 - Principles of Programming Languages (Compilers)",
-                "link": "/courses/cse-340",
-                "prerequisites": [
-                    "CSE 310",
-                    "CSE 230"
-                ],
-                "prerequisitesFor": [
-                    "CSE 485"
-                ]
-            },
-            {
-                "name": "CSE 355 - Theoretical Computer Science",
-                "link": "/courses/cse-355",
-                "prerequisites": [
-                    "CSE 310"
-                ],
-                "prerequisitesFor": [
-                    "CSE 485"
-                ]
-            },
-            {
-                "name": "CSE 360 - Software Engineering",
-                "link": "/courses/cse-360",
-                "prerequisites": [
-                    "CSE 240"
-                ],
-                "prerequisitesFor": [
-                    "CSE 485"
-                ]
-            },
-            {
-                "name": "CSE 365 - Information Assurance",
-                "link": "/courses/cse-365",
-                "prerequisites": [
-                    "CSE 230",
-                    "CSE 310"
-                ],
-                "prerequisitesFor": []
-            }
-        ],
-        "Electives": [
-            {
-                "name": "CSE 475 - Intro to Machine Learning",
-                "link": "/courses/cse-475",
-                "prerequisites": [
-                    "CSE 205"
-                ]
-            }
-        ],
-        "Capstone": [
-
-            {
-                "name": "CSE 485 - Capstone 1",
-                "link": "/courses/cse-485",
-                "prerequisites": [
-                    "CSE 301",
-                    "CSE 330",
-                    "CSE 340",
-                    "CSE 355",
-                    "CSE 360",
-                    "ENG 107"
-                ],
-                "prerequisitesFor": [
-                    "CSE 486"
-                ]
-            },
-            {
-                "name": "CSE 486 - Capstone 2",
-                "link": "/courses/cse-486",
-                "prerequisites": [
-                    "CSE 485",
-                    "ENG 107"
-                ],
-                "prerequisitesFor": []
-            }
-        ],
-        "Special": [
-            {
-                "name": "CSE 494 - Internship",
-                "link": "/courses/cse-494",
-                "prerequisites": [
-                    "CSE 205"
-                ]
-            },
-            {
-                "name": "CSE 499 - Independent Study",
-                "link": "/courses/cse-499",
-                "prerequisites": [
-                    "CSE 205"
-                ]
-            }
-        ]
-    }
+        "prerequisitesFor": ["CSE 486"]
+      },
+      {
+        "name": "CSE 486 - Capstone 2",
+        "link": "/courses/cse-486",
+        "prerequisites": ["CSE 485", "ENG 107"],
+        "prerequisitesFor": []
+      }
+    ],
+    "Special": [
+      {
+        "name": "CSE 494 - Internship",
+        "link": "/courses/cse-494",
+        "prerequisites": ["CSE 205"]
+      },
+      {
+        "name": "CSE 499 - Independent Study",
+        "link": "/courses/cse-499",
+        "prerequisites": ["CSE 205"]
+      }
+    ]
+  }
 ]

@@ -1,6 +1,6 @@
 // @ts-check
-import { defineConfig, passthroughImageService } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import { defineConfig, passthroughImageService } from "astro/config";
+import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,21 +9,37 @@ export default defineConfig({
     service: passthroughImageService(),
   },
   integrations: [
-		starlight({
-			title: 'ASU CS Wiki',
+    starlight({
+      title: "ASU CS Wiki",
       customCss: [
-        '@fontsource-variable/space-grotesk',
-        './src/styles/custom.css',
+        "@fontsource-variable/space-grotesk",
+        "./src/styles/custom.css",
       ],
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/asusoda/asu-cs-wiki' }, { icon: 'discord', label: 'Discord', href: 'https://discord.gg/g6Nu8Fj4G6' }, { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/soda.asu/' }, { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/thesoda/' }],
+      social: [
+        {
+          icon: "github",
+          label: "GitHub",
+          href: "https://github.com/asusoda/asu-cs-wiki",
+        },
+        {
+          icon: "discord",
+          label: "Discord",
+          href: "https://discord.gg/g6Nu8Fj4G6",
+        },
+        {
+          icon: "instagram",
+          label: "Instagram",
+          href: "https://www.instagram.com/soda.asu/",
+        },
+        {
+          icon: "linkedin",
+          label: "LinkedIn",
+          href: "https://www.linkedin.com/company/thesoda/",
+        },
+      ],
       editLink: {
-        baseUrl: 'https://github.com/asusoda/asu-cs-wiki/edit/main',
+        baseUrl: "https://github.com/asusoda/asu-cs-wiki/edit/main",
       },
-		}),
-	],
-  vite: {
-    ssr: {
-      external: ['nanoid/non-secure']
-    }
-  }
+    }),
+  ],
 });
