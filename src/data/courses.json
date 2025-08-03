@@ -23,7 +23,7 @@
         "name": "CSE 205 - Object-Oriented Programming in Java",
         "link": "/courses/cse-205",
         "prerequisites": ["CSE 110"],
-        "prerequisitesFor": ["CSE 300", "CSE 301", "CSE 310", "CSE 360"]
+        "prerequisitesFor": ["CSE 301", "CSE 310", "CSE 360"]
       },
       {
         "name": "CSE 230 - Computer Organization and Architecture",
@@ -48,7 +48,7 @@
       {
         "name": "CSE 310 - Data Structures and Algorithms",
         "link": "/courses/cse-310",
-        "prerequisites": ["CSE 205", "MAT 243/300"],
+        "prerequisites": ["CSE 205", "MAT 243"],
         "prerequisitesFor": ["CSE 330", "CSE 340", "CSE 355"]
       },
       {
