@@ -14,8 +14,8 @@
         "prerequisitesFor": ["CSE 301"]
       },
       {
-        "name": "CSE 120 - Digital Design Fundamentals",
-        "link": "/courses/cse-120",
+        "name": "EEE 120 - Digital Design Fundamentals",
+        "link": "/courses/eee-120",
         "prerequisites": [],
         "prerequisitesFor": ["CSE 230"]
       },
@@ -28,7 +28,7 @@
       {
         "name": "CSE 230 - Computer Organization and Architecture",
         "link": "/courses/cse-230",
-        "prerequisites": ["CSE 110", "CSE 120"],
+        "prerequisites": ["CSE 110", "EEE 120"],
         "prerequisitesFor": ["CSE 330", "CSE 340"]
       },
       {
@@ -36,6 +36,12 @@
         "link": "/courses/cse-240",
         "prerequisites": ["CSE 205"],
         "prerequisitesFor": ["CSE 310", "CSE 360"]
+      },
+      {
+        "name": "MAT 243 - Discrete Mathematics",
+        "link": "/courses/mat-243",
+        "prerequisites": ["MAT 265"],
+        "prerequisitesFor": ["CSE 310"]
       }
     ],
     "Core (3xx - 4xx)": [
@@ -80,6 +86,12 @@
         "link": "/courses/cse-365",
         "prerequisites": ["CSE 230", "CSE 310"],
         "prerequisitesFor": []
+      },
+      {
+        "name": "MAT 343 - Applied Linear Algebra",
+        "link": "/courses/mat-343",
+        "prerequisites": ["MAT 266"],
+        "prerequisitesFor": ["CSE 475"]
       }
     ],
     "Mandatory Electives": [

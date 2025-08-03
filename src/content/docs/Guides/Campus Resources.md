@@ -3,7 +3,7 @@ title: Campus Resources
 description: Campus resources for ASU CS students | The ASU CS Wiki
 ---
 
-ASU offers resources like counseling, health services, student advocacy, sexual violence support, and the LiveSafe app for safety and reporting.
+ASU offers a wide range of resources such as counseling, health services, student advocacy, sexual violence support, international student services, and the LiveSafe app for safety and reporting. For life-threatening situations or emergencies, call 911.
 
 | Department | Link | Contact |
 |------------|------|---------|
