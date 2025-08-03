@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>CS Flow — Hover to See Prereqs and Futures</title>
+    <!-- Tailwind CDN (dev/demo). Prefer a proper build in production. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#0b0f14",
+              panel: "#121822",
+              muted: "#93a1b3",
+              textc: "#e6edf3",
+              card: "#16202e",
+              cardBorder: "#273347",
+              hoverc: "#22314a",
+              past: "#1db954",
+              pastSoft: "#8fe3b0",
+              future: "#1f6feb",
+              futureSoft: "#5181bc",
+              purplec: "#b48efc",
+              capstone: "#2a1f36",
+              warning: "#ffd37a",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Utility helpers that Tailwind doesn't cover directly */
+      .course.future,
+      .course.future-soft,
+      .course.past,
+      .course.past-soft {
+        outline: 1px solid transparent;
+      }
+      .course.future {
+        background: linear-gradient(
+          0deg,
+          color-mix(in srgb, #1f6feb 70%, transparent),
+          color-mix(in srgb, #1f6feb 70%, transparent)
+        );
+        outline-color: color-mix(in srgb, #1f6feb 40%, #0000);
+      }
+      .course.future-soft {
+        background: linear-gradient(
+          0deg,
+          color-mix(in srgb, #5181bc 50%, transparent),
+          color-mix(in srgb, #5181bc 50%, transparent)
+        );
+        outline-color: color-mix(in srgb, #5181bc 35%, #0000);
+      }
+      .course.past {
+        background: linear-gradient(
+          0deg,
+          color-mix(in srgb, #1db954 70%, transparent),
+          color-mix(in srgb, #1db954 70%, transparent)
+        );
+        outline-color: color-mix(in srgb, #1db954 40%, #0000);
+      }
+      .course.past-soft {
+        background: linear-gradient(
+          0deg,
+          color-mix(in srgb, #8fe3b0 50%, transparent),
+          color-mix(in srgb, #8fe3b0 50%, transparent)
+        );
+        outline-color: color-mix(in srgb, #8fe3b0 35%, #0000);
+      }
+    </style>
+  </head>
+  <body class="bg-bg text-textc font-[Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial,'Apple Color Emoji','Segoe UI Emoji'] leading-[1.35]">
+    <div class="max-w-[1200px] mx-auto mt-8 mb-12 px-4">
+      <header class="mb-4">
+        <div class="flex gap-3.5 items-center mt-2 text-muted text-[13px]">
+          <span class="inline-flex items-center gap-1.5">
+            <span class="inline-block w-[14px] h-[10px] rounded-[2px] bg-futureSoft"></span>
+            Indirect prerequisite
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <span class="inline-block w-[14px] h-[10px] rounded-[2px] bg-pastSoft"></span>
+            Indirect dependent
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <span class="inline-block w-[14px] h-[10px] rounded-[2px] bg-past"></span>
+            Immediate prerequisite
+          </span>
+          <span class="inline-flex items-center gap-1.5">
+            <span class="inline-block w-[14px] h-[10px] rounded-[2px] bg-future"></span>
+            Immediate dependent
+          </span>
+        </div>
+      </header>
+
+      <section
+        id="termsGrid"
+        class="grid grid-cols-8 gap-0 mt-[18px] rounded-[10px] max-[1100px]:grid-cols-4 max-[720px]:grid-cols-2"
+      ></section>
+
+      <div class="mt-7 text-muted text-xs">
+        Tip: On touch devices, tap a course to toggle highlight; tap empty space
+        to clear.
+      </div>
+    </div>
+
+    <script>
+      // ------------------ Data ------------------
+      const termOrder = [
+        "Fall-1",
+        "Spring-2",
+        "Fall-3",
+        "Spring-4",
+        "Fall-5",
+        "Spring-6",
+        "Fall-7",
+        "Spring-8",
+      ];
+
+      const termLayout = {
+        "Fall-1": [
+          "ENG 101",
+          "FSE 100",
+          "CSE 110",
+          "ASU 101",
+          "MAT 265",
+          "HU/SB",
+        ],
+        "Spring-2": [
+          "ENG 102",
+          "SQ LAB SCI",
+          "CSE 205",
+          "MAT 266",
+          "HU or SB & AA",
+        ],
+        "Fall-3": [
+          "SQ LAB SCI 2",
+          "EEE 120",
+          "CSE 240",
+          "MAT 267 or CSE 259",
+          "MAT 243",
+        ],
+        "Spring-4": [
+          "SQ LAB SCI 3",
+          "CSE 230",
+          "CSE 310",
+          "HU or SB & AA",
+          "General Elective",
+        ],
+        "Fall-5": [
+          "CSE 301",
+          "CSE 365",
+          "CSE 355",
+          "CSE 360",
+          "IEE 380",
+          "HU or SB",
+        ],
+        "Spring-6": ["CSE 330", "CSE 340", "MAT 343", "Upper Div HU/SB"],
+        "Fall-7": ["CSE 4XX", "CSE 4XX", "Tech Elect", "CSE 485"],
+        "Spring-8": ["CSE 4XX", "CSE 4XX", "Tech Elect", "CSE 486"],
+      };
+
+      const spring6OrGroup = ["CSE 412", "CSE 434", "CSE 445"];
+
+      const catalog = [
+        {
+          group: "Core (1xx - 2xx)",
+          items: [
+            {
+              name: "CSE 110 - Principles of Programming",
+              link: "/courses/cse-110",
+              prerequisites: [],
+              prerequisitesFor: ["CSE 205", "CSE 230"],
+            },
+            {
+              name: "FSE 100 - Intro to Engineering",
+              link: "/courses/fse-100",
+              prerequisites: [],
+              prerequisitesFor: ["CSE 301"],
+            },
+            {
+              name: "EEE 120 - Digital Design Fundamentals",
+              link: "/courses/eee-120",
+              prerequisites: [],
+              prerequisitesFor: ["CSE 230"],
+            },
+            {
+              name: "CSE 205 - Object-Oriented Programming in Java",
+              link: "/courses/cse-205",
+              prerequisites: ["CSE 110"],
+              prerequisitesFor: ["CSE 301", "CSE 310", "CSE 360"],
+            },
+            {
+              name: "CSE 230 - Computer Organization and Architecture",
+              link: "/courses/cse-230",
+              prerequisites: ["CSE 110", "EEE 120"],
+              prerequisitesFor: ["CSE 330", "CSE 340"],
+            },
+            {
+              name: "CSE 240 - Introduction to Programming Languages",
+              link: "/courses/cse-240",
+              prerequisites: ["CSE 205"],
+              prerequisitesFor: ["CSE 310", "CSE 360"],
+            },
+            {
+              name: "MAT 243 - Discrete Mathematics",
+              link: "/courses/mat-243",
+              prerequisites: ["MAT 265"],
+              prerequisitesFor: ["CSE 310"],
+            },
+          ],
+        },
+        {
+          group: "Core (3xx - 4xx)",
+          items: [
+            {
+              name: "CSE 301 - Computing Ethics",
+              link: "/courses/cse-301",
+              prerequisites: ["CSE 205", "FSE 100"],
+              prerequisitesFor: ["CSE 485"],
+            },
+            {
+              name: "CSE 310 - Data Structures and Algorithms",
+              link: "/courses/cse-310",
+              prerequisites: ["CSE 205", "MAT 243"],
+              prerequisitesFor: ["CSE 330", "CSE 340", "CSE 355"],
+            },
+            {
+              name: "CSE 330 - Operating Systems",
+              link: "/courses/cse-330",
+              prerequisites: ["CSE 310", "CSE 230"],
+              prerequisitesFor: ["CSE 485"],
+            },
+            {
+              name: "CSE 340 - Principles of Programming Languages",
+              link: "/courses/cse-340",
+              prerequisites: ["CSE 310", "CSE 230"],
+              prerequisitesFor: ["CSE 485"],
+            },
+            {
+              name: "CSE 355 - Theoretical Computer Science",
+              link: "/courses/cse-355",
+              prerequisites: ["CSE 310"],
+              prerequisitesFor: ["CSE 485"],
+            },
+            {
+              name: "CSE 360 - Software Engineering",
+              link: "/courses/cse-360",
+              prerequisites: ["CSE 240"],
+              prerequisitesFor: ["CSE 485"],
+            },
+            {
+              name: "CSE 365 - Information Assurance",
+              link: "/courses/cse-365",
+              prerequisites: ["CSE 230", "CSE 310"],
+              prerequisitesFor: [],
+            },
+            {
+              name: "MAT 343 - Applied Linear Algebra",
+              link: "/courses/mat-343",
+              prerequisites: ["MAT 266"],
+              prerequisitesFor: ["CSE 475"],
+            },
+          ],
+        },
+        {
+          group: "Mandatory Electives",
+          items: [
+            {
+              name: "CSE 412 - Database Management",
+              link: "/courses/cse-412",
+              prerequisites: ["CSE 310"],
+            },
+            {
+              name: "CSE 434 - Computer Networks",
+              link: "/courses/cse-434",
+              prerequisites: ["CSE 310", "CSE 330"],
+            },
+            {
+              name: "CSE 445 - Software Engineering",
+              link: "/courses/cse-445",
+              prerequisites: ["CSE 310", "CSE 360"],
+            },
+          ],
+        },
+        {
+          group: "Electives",
+          items: [
+            { name: "CSE 463 - Human Computer Interaction", link: "/courses/cse-463", prerequisites: ["CSE 310"] },
+            { name: "CSE 464 - QA and Testing", link: "/courses/cse-464", prerequisites: ["CSE 310", "CSE 360"] },
+            { name: "CSE 466 - Computer Systems Security", link: "/courses/cse-466", prerequisites: ["CSE 310", "CSE 365"] },
+            { name: "CSE 471 - Intro to Artificial Intelligence", link: "/courses/cse-471", prerequisites: ["CSE 310"] },
+            { name: "CSE 472 - Social Media Mining", link: "/courses/cse-472", prerequisites: ["CSE 310", "IEE 380", "MAT 343"] },
+            { name: "CSE 475 - Intro to Machine Learning", link: "/courses/cse-475", prerequisites: ["CSE 205"] },
+            { name: "CSE 476 - Intro to Natural Language Processing", link: "/courses/cse-476", prerequisites: ["CSE 310"] },
+            { name: "CSE 478 - Intro to Data Visualization", link: "/courses/cse-478", prerequisites: ["CSE 310"] },
+          ],
+        },
+        {
+          group: "Capstone",
+          items: [
+            {
+              name: "CSE 485 - Capstone 1",
+              link: "/courses/cse-485",
+              prerequisites: [
+                "CSE 301",
+                "CSE 330",
+                "CSE 340",
+                "CSE 355",
+                "CSE 360",
+                "ENG 107",
+              ],
+              prerequisitesFor: ["CSE 486"],
+            },
+            {
+              name: "CSE 486 - Capstone 2",
+              link: "/courses/cse-486",
+              prerequisites: ["CSE 485", "ENG 107"],
+              prerequisitesFor: [],
+            },
+          ],
+        },
+      ];
+
+      // ------------------ Graph ------------------
+      function getCode(label) {
+        const m = label.match(/^[A-Z]{2,4}\s?\d{3}/);
+        return m ? m[0].replace(/\s+/, " ") : label;
+      }
+
+      const graph = new Map();
+      function ensureNode(code) {
+        if (!graph.has(code)) {
+          graph.set(code, {
+            code,
+            title: code,
+            link: null,
+            prereq: new Set(),
+            next: new Set(),
+          });
+        }
+        return graph.get(code);
+      }
+
+      for (const g of catalog) {
+        for (const item of g.items) {
+          const code = getCode(item.name);
+          const node = ensureNode(code);
+          node.title = item.name.split(" - ").slice(1).join(" - ") || code;
+          if (!item.name.includes(" - ")) {
+            console.log(item.name);
+          }
+          node.link = item.link || null;
+
+          (item.prerequisites || []).forEach((p) => {
+            const pCode = getCode(p);
+            ensureNode(pCode).next.add(code);
+            node.prereq.add(pCode);
+          });
+
+          (item.prerequisitesFor || []).forEach((n) => {
+            const nCode = getCode(n);
+            ensureNode(nCode).prereq.add(code);
+            node.next.add(nCode);
+          });
+        }
+      }
+
+      for (const term of Object.values(termLayout)) {
+        for (const label of term) ensureNode(getCode(label));
+      }
+      spring6OrGroup.forEach((c) => ensureNode(c));
+
+      // ------------------ Rendering ------------------
+      const gridEl = document.getElementById("termsGrid");
+
+      function courseEl(code, labelOverride) {
+        const node =
+          graph.get(code) || ({ code, title: code, prereq: new Set() });
+
+        const el = document.createElement("div");
+        el.className =
+          "course relative cursor-pointer rounded-md border border-cardBorder bg-card px-2.5 py-2 transition " +
+          "hover:bg-hoverc hover:-translate-y-[1px] hover:shadow-[0_4px_12px_rgba(0,0,0,0.25)]";
+        el.dataset.code = code;
+
+        el.innerHTML = `
+          <div class="font-bold tracking-[0.04em]">${code}</div>
+          <a class="block mt-0.5 text-[13px] text-[#cfe3ff]" ${
+            node.link ? `href="${node.link}" target="_blank"` : ""
+          }>${labelOverride || node.title}</a>
+        `;
+
+        el.addEventListener("mouseenter", () => highlightFor(code));
+        el.addEventListener("mouseleave", () => clearHighlights());
+
+        el.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const active = el.classList.contains("activeHover");
+          clearHighlights();
+          if (!active) {
+            el.classList.add("activeHover");
+            highlightFor(code);
+          }
+        });
+
+        return el;
+      }
+
+      function render() {
+        gridEl.innerHTML = "";
+        for (const termName of termOrder) {
+          const col = document.createElement("div");
+          col.className =
+            "flex min-h-[140px] flex-col gap-2.5 bg-panel border border-cardBorder p-2.5";
+          const h = document.createElement("h3");
+          h.className =
+            "m-0 text-[14px] tracking-[0.03em] text-muted uppercase";
+          h.textContent = termName.replace("-", " ");
+          col.appendChild(h);
+
+          (termLayout[termName] || []).forEach((label) => {
+            const code = getCode(label);
+            col.appendChild(
+              courseEl(code, label.includes(code) ? null : label)
+            );
+          });
+
+          if (termName === "Spring-6") {
+            const orBlock = document.createElement("div");
+            orBlock.className =
+              "mt-2 border-t border-dashed border-cardBorder pt-2";
+            const row = document.createElement("div");
+            row.className = "flex flex-col gap-2";
+
+            const courseRow1 = document.createElement("div");
+            courseRow1.className = "flex items-center gap-2";
+            courseRow1.appendChild(courseEl("CSE 412"));
+            row.appendChild(courseRow1);
+
+            const or1 = document.createElement("div");
+            or1.className =
+              "text-muted font-bold tracking-[0.06em] px-0.5 text-[12px] text-center";
+            or1.textContent = "OR";
+            row.appendChild(or1);
+
+            const courseRow2 = document.createElement("div");
+            courseRow2.className = "flex items-center gap-2";
+            courseRow2.appendChild(courseEl("CSE 434"));
+            row.appendChild(courseRow2);
+
+            const or2 = document.createElement("div");
+            or2.className =
+              "text-muted font-bold tracking-[0.06em] px-0.5 text-[12px] text-center";
+            or2.textContent = "OR";
+            row.appendChild(or2);
+
+            const courseRow3 = document.createElement("div");
+            courseRow3.className = "flex items-center gap-2";
+            courseRow3.appendChild(courseEl("CSE 445"));
+            row.appendChild(courseRow3);
+
+            orBlock.appendChild(row);
+            col.appendChild(orBlock);
+          }
+
+          gridEl.appendChild(col);
+        }
+      }
+
+      // ------------------ Highlight logic ------------------
+      function bfsLayers(start, direction = "past") {
+        const layers = [];
+        const visited = new Set([start]);
+        let frontier = new Set([start]);
+
+        const step = (code) => {
+          const node = graph.get(code);
+          if (!node) return [];
+          return direction === "past"
+            ? Array.from(node.prereq)
+            : Array.from(node.next);
+        };
+
+        while (frontier.size) {
+          const nextFrontier = new Set();
+          frontier.forEach((c) => {
+            step(c).forEach((n) => {
+              if (!visited.has(n)) {
+                visited.add(n);
+                nextFrontier.add(n);
+              }
+            });
+          });
+          if (nextFrontier.size) layers.push(nextFrontier);
+          frontier = nextFrontier;
+        }
+        return layers;
+      }
+
+      function highlightFor(code) {
+        const pastLayers = bfsLayers(code, "past");
+        const futureLayers = bfsLayers(code, "future");
+
+        document.querySelectorAll(".course").forEach((el) =>
+          el.classList.remove("past", "past-soft", "future", "future-soft")
+        );
+
+        if (pastLayers[0])
+          pastLayers[0].forEach((c) =>
+            document
+              .querySelectorAll(`.course[data-code="${c}"]`)
+              .forEach((el) => el.classList.add("past"))
+          );
+        const pastSoft = new Set(
+          pastLayers.slice(1).flatMap((s) => Array.from(s))
+        );
+        pastSoft.forEach((c) =>
+          document
+            .querySelectorAll(`.course[data-code="${c}"]`)
+            .forEach((el) => el.classList.add("past-soft"))
+        );
+
+        if (futureLayers[0])
+          futureLayers[0].forEach((c) =>
+            document
+              .querySelectorAll(`.course[data-code="${c}"]`)
+              .forEach((el) => el.classList.add("future"))
+          );
+        const futureSoft = new Set(
+          futureLayers.slice(1).flatMap((s) => Array.from(s))
+        );
+        futureSoft.forEach((c) =>
+          document
+            .querySelectorAll(`.course[data-code="${c}"]`)
+            .forEach((el) => el.classList.add("future-soft"))
+        );
+      }
+
+      function clearHighlights() {
+        document.querySelectorAll(".course").forEach((el) =>
+          el.classList.remove(
+            "past",
+            "past-soft",
+            "future",
+            "future-soft",
+            "activeHover"
+          )
+        );
+      }
+
+      document.addEventListener("click", clearHighlights);
+
+      render();
+    </script>
+  </body>
+</html>
