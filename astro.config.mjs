@@ -15,7 +15,7 @@ export default defineConfig({
         '@fontsource-variable/space-grotesk',
         './src/styles/custom.css',
       ],
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/asusoda/asu-cs-wiki' }],
+			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/asusoda/asu-cs-wiki' }, { icon: 'discord', label: 'Discord', href: 'https://discord.gg/g6Nu8Fj4G6' }, { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/soda.asu/' }, { icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/thesoda/' }],
       editLink: {
         baseUrl: 'https://github.com/asusoda/asu-cs-wiki/edit/main',
       },

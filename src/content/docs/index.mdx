@@ -1,36 +1,41 @@
 ---
-title: Welcome to Starlight
+title: The ASU CS Wiki
 description: Get started building your docs site with Starlight.
 template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: A collection of resources, course information, career prep, and more for ASU CS students! Brought to you by <a href="https://thesoda.io/">SoDA</a> 🥤
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/soda_bear.webp
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /guides
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Contribute
+      link: https://github.com/asusoda/asu-cs-wiki
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
+	<Card title="Courses Explorer" icon="pencil">
 		Edit `src/content/docs/index.mdx` to see this page change. (testing testing 123)
 	</Card>
-	<Card title="Add new content" icon="add-document">
+	<Card title="Career Resources" icon="add-document">
 		Add Markdown or MDX files to `src/content/docs` to create new pages.
 	</Card>
-	<Card title="Configure your site" icon="setting">
+	<Card title="Clubs & Orgs" icon="information">
 		Edit your `sidebar` and other config in `astro.config.mjs`.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
+	<Card title="Research Opportunities" icon="puzzle">
 		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	</Card>
+	<Card title="Campus Resources" icon="open-book">
+		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	</Card>
+	<Card title="Random Page" icon="random">
+		Check out a random page!
 	</Card>
 </CardGrid>
