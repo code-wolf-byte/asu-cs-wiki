@@ -1,6 +1,6 @@
 ---
 title: Career Prep
-description: Career resources for ASU CS students.
+description: Career resources for ASU CS students | The ASU CS Wiki
 ---
 
 Hello Sun-Devils! Welcome to the ASU CS Wiki. This is a collection of guides, resources, and information for ASU CS students.
