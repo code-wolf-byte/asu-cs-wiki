@@ -1,12 +1,15 @@
 # ASU CS Wiki
 
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Fwiki.thesoda.io&label=wiki.thesoda.io)](https://wiki.thesoda.io)
-[![GitHub contributors](https://img.shields.io/github/contributors/asusoda/asu-cs-wiki?color=orange)](https://github.com/asusoda/asu-cs-wiki/graphs/contributors)
-[![GitHub issues](https://img.shields.io/github/issues/asusoda/asu-cs-wiki)](https://github.com/asusoda/asu-cs-wiki/issues)
-[![GitHub stars](https://img.shields.io/github/stars/asusoda/asu-cs-wiki?style=social)](https://github.com/asusoda/asu-cs-wiki/stargazers)
-<a href="https://deepwiki.com/asusoda/asu-cs-wiki"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
+<div align="center">
+  <a href="https://wiki.thesoda.io"><img src="https://img.shields.io/website?url=https%3A%2F%2Fwiki.thesoda.io&label=wiki.thesoda.io" alt="Website"></a>
+  <a href="https://github.com/asusoda/asu-cs-wiki/graphs/contributors"><img src="https://img.shields.io/github/contributors/asusoda/asu-cs-wiki?color=orange" alt="GitHub contributors"></a>
+  <a href="https://github.com/asusoda/asu-cs-wiki/issues"><img src="https://img.shields.io/github/issues/asusoda/asu-cs-wiki" alt="GitHub issues"></a>
+  <a href="https://github.com/asusoda/asu-cs-wiki/stargazers"><img src="https://img.shields.io/github/stars/asusoda/asu-cs-wiki?style=social" alt="GitHub stars"></a>
+  <a href="https://deepwiki.com/asusoda/asu-cs-wiki"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
+</div>
 
-**The community-driven knowledge hub for ASU Computer Science students.** 🔱🥤
+**The community-driven knowledge hub for ASU Computer Science students.** 🔱🥤 The ASU CS Wiki is your **one-stop resource** for thriving in Arizona State University's Computer Science program and your career beyond. We've curated this repository of information from students, alumni, and the community into an organized, searchable knowledge base.
+
 
 <div align="center" style="margin-bottom: 20px;">
   <a href="https://wiki.thesoda.io"><strong>🌐 Visit the Wiki</strong></a> •
@@ -15,7 +18,6 @@
   <a href="https://discord.gg/g6Nu8Fj4G6"><strong>💬 Discord</strong></a>
 </div>
 
-The ASU CS Wiki is your **one-stop resource** for thriving in Arizona State University's Computer Science program and your career beyond. We've curated this repository of information from students, alumni, and the community into an organized, searchable knowledge base.
 
 <!-- ## 🌟 Key Features
 
