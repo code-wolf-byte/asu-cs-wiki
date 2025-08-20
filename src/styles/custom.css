@@ -49,6 +49,10 @@
   transform: scale(1.1) rotate(5deg);
 }
 
+.sl-container {
+  max-width: 950px;
+}
+
 /* Hero section enhancements */
 .hero {
   position: relative;
