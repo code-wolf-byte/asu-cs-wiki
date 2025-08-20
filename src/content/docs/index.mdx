@@ -1,46 +1,71 @@
 ---
 title: The ASU CS Wiki
 description: Get started building your docs site with Starlight.
-template: splash
+tableOfContents: false
 hero:
-  tagline: A collection of resources, course information, career prep, and more for ASU CS students! Brought to you by <a href="https://thesoda.io/">SoDA</a> 🥤
+  tagline: A collection of resources, course information, career prep, and more for ASU CS students! Brought to you by <a href="https://thesoda.io/">The Software Developers Association</a> 🥤
   image:
     file: ../../assets/soda_bear.webp
   actions:
-    - text: Get Started
-      link: /get-started
-      icon: right-arrow
     - text: Contribute
       link: https://github.com/asusoda/asu-cs-wiki
-      icon: external
+      icon: github
       variant: minimal
+      attrs:
+        target: _blank
 ---
 
-import { Card, CardGrid } from "@astrojs/starlight/components";
+import { CardGrid } from "@astrojs/starlight/components";
+import IconLinkCard from "../../components/IconLinkCard.astro";
+
+# Get Started
 
 <CardGrid stagger>
-  <Card title="Courses Explorer" icon="pencil" link="/guides/courses">
-    Interactive course browser with all CSE classes. Find course information, 
-    prerequisites, and scheduling guides to plan your academic journey.
-  </Card>
-  <Card title="Career Resources" icon="add-document" link="/guides/career">
-    Resume templates, interview prep, internship opportunities, and career 
-    guidance to help you land your dream job in tech.
-  </Card>
-  <Card title="Clubs & Organizations" icon="information" link="/guides/clubs">
-    Discover student organizations, coding clubs, and tech communities to 
-    build your network and enhance your college experience.
-  </Card>
-  <Card title="Research Opportunities" icon="puzzle" link="/guides/research">
-    Find research positions, faculty projects, and undergraduate research 
-    programs to gain hands-on experience in cutting-edge technology.
-  </Card>
-  <Card title="Campus Resources" icon="open-book" link="/guides/campus-resources">
-    Essential campus services including dining, health services, 3D printing, 
-    makerspace access, and emergency contacts all in one place.
-  </Card>
-  <Card title="Get Started Guide" icon="rocket" link="/get-started">
-    New to ASU CS? Start here for essential information, tips, and links 
-    to help you navigate your computer science journey successfully.
-  </Card>
+	<IconLinkCard
+		title="Courses"
+		icon="open-book"
+		href="/guides/courses"
+		description="Interactive course browser with all CSE classes. Find course info, prereqs, and survival tips, from 110 to the trifecta."
+	/>
+	<IconLinkCard
+		title="Internships"
+		icon="rocket"
+		href="/guides/internships"
+		description="Some wisdom on internships, resume tips/templates, and how to nail your interviews."
+	/>
+	<IconLinkCard
+		title="Clubs"
+		icon="comment"
+		href="/guides/clubs"
+    	description="Discover student organizations, coding clubs, and tech communities to build your network and enhance your college experience."
+	/>
+	<IconLinkCard
+		title="Research"
+		icon="puzzle"
+		href="/guides/research"
+		description="Find research positions, faculty projects, and undergraduate research programs to gain hands-on experience in cutting-edge technology."
+	/>
+	<IconLinkCard
+		title="Campus Resources"
+		icon="open-book"
+		href="/guides/campus-resources"
+		description="Find research positions, faculty projects, and undergraduate research programs to gain hands-on experience in cutting-edge technology."
+    	description="Essential campus services including dining, health services, 3D printing, makerspace access, and emergency contacts all in one place."
+	/>
 </CardGrid>
+
+# Why this wiki exists
+
+Ever tried finding advice about a CS course at ASU? You end up digging through old Reddit threads, asking in Discord servers, texting that one friend who took it last semester, and hoping someone in your group chat has the inside scoop. The information is out there, scattered like breadcrumbs across the internet.
+
+That's where this wiki comes in. Instead of hunting through the digital sludge pile for that one helpful comment about CSE 310 study tips or how to prepare for internship interviews, we've curated the collective wisdom of ASU CS students into one place. No algorithms deciding what you see, no outdated posts from 5 years ago, just the good stuff organized and ready when you need it.
+
+:::note
+Keep in mind that we are not officially affiliated with Arizona State
+University. Take everything here with a grain of salt. That said, if
+you want to add or fix something, feel free to submit a PR, [leave an issue in
+our GitHub repo](https://github.com/asusoda/asu-cs-wiki/issues), or
+modify something yourself using the "Edit page" link at the bottom of
+any page!
+:::
+
