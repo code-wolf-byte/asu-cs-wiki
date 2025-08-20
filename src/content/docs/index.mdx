@@ -19,122 +19,28 @@ hero:
 import { Card, CardGrid } from "@astrojs/starlight/components";
 
 <CardGrid stagger>
-  <Card title="📚 Courses Explorer" icon="pencil" link="/guides/courses">
+  <Card title="Courses Explorer" icon="pencil" link="/guides/courses">
     Interactive course browser with all CSE classes. Find course information, 
     prerequisites, and scheduling guides to plan your academic journey.
   </Card>
-  <Card title="💼 Career Resources" icon="add-document" link="/guides/career">
+  <Card title="Career Resources" icon="add-document" link="/guides/career">
     Resume templates, interview prep, internship opportunities, and career 
     guidance to help you land your dream job in tech.
   </Card>
-  <Card title="🎓 Clubs & Organizations" icon="information" link="/guides/clubs">
+  <Card title="Clubs & Organizations" icon="information" link="/guides/clubs">
     Discover student organizations, coding clubs, and tech communities to 
     build your network and enhance your college experience.
   </Card>
-  <Card title="🔬 Research Opportunities" icon="puzzle" link="/guides/research">
+  <Card title="Research Opportunities" icon="puzzle" link="/guides/research">
     Find research positions, faculty projects, and undergraduate research 
     programs to gain hands-on experience in cutting-edge technology.
   </Card>
-  <Card title="🏫 Campus Resources" icon="open-book" link="/guides/campus-resources">
+  <Card title="Campus Resources" icon="open-book" link="/guides/campus-resources">
     Essential campus services including dining, health services, 3D printing, 
     makerspace access, and emergency contacts all in one place.
   </Card>
-  <Card title="🚀 Get Started Guide" icon="rocket" link="/get-started">
+  <Card title="Get Started Guide" icon="rocket" link="/get-started">
     New to ASU CS? Start here for essential information, tips, and links 
     to help you navigate your computer science journey successfully.
   </Card>
 </CardGrid>
-
-<style>
-  /* Enhanced card interactivity */
-  .sl-card-grid .card {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-  
-  .sl-card-grid .card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  }
-  
-  .sl-card-grid .card:hover .card-title {
-    background: linear-gradient(45deg, #ff6b35, #f7931e, #3b82f6);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  /* Add subtle glow effect */
-  .sl-card-grid .card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.05), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-  
-  .sl-card-grid .card:hover::before {
-    opacity: 1;
-  }
-  
-  /* Smooth icon animation */
-  .sl-card-grid .card .icon {
-    transition: transform 0.3s ease;
-  }
-  
-  .sl-card-grid .card:hover .icon {
-    transform: scale(1.1) rotate(5deg);
-  }
-  
-  /* Hero section enhancements */
-  .hero {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
-    pointer-events: none;
-  }
-  
-  /* Add subtle animation to the card grid */
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .sl-card-grid {
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  /* Stagger the card animations */
-  .sl-card-grid .card:nth-child(1) { animation-delay: 0.1s; }
-  .sl-card-grid .card:nth-child(2) { animation-delay: 0.2s; }
-  .sl-card-grid .card:nth-child(3) { animation-delay: 0.3s; }
-  .sl-card-grid .card:nth-child(4) { animation-delay: 0.4s; }
-  .sl-card-grid .card:nth-child(5) { animation-delay: 0.5s; }
-  .sl-card-grid .card:nth-child(6) { animation-delay: 0.6s; }
-  
-  .sl-card-grid .card {
-    opacity: 0;
-    animation: fadeInUp 0.6s ease-out forwards;
-  }
-</style>
