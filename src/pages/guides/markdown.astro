@@ -1,0 +1,17 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import { Editable, useEditor } from "@wysimark/react"
+import { useState } from "react"
+
+const [markdown, setMarkdown] = useState("# Hello World")
+  const editor = useEditor({
+    height: "100%",
+    minHeight: "100%",
+    maxHeight: "100%",
+  })
+
+---
+
+<StarlightPage frontmatter={{ title: 'Markdown', description: 'Guides for ASU CS students.' }}>
+  <Editable editor={editor} value={markdown} onChange={setMarkdown} />
+</StarlightPage>
