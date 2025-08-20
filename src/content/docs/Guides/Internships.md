@@ -3,12 +3,18 @@ title: Internships
 description: Internship resources for ASU CS students.
 ---
 
-Hello Sun-Devils! Welcome to the ASU CS Wiki. This is a collection of guides, resources, and information for ASU CS students.
+:::tip
+under construction
+:::
 
-Looking for resume templates? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/resume-templates)
+# Application Process & Timelines
 
-Looking for internship opportunities? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/internship-opportunities)
+## Resume Screen
 
-Looking for club information? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/clubs-and-orgs)
+### Templates
 
-Looking for research opportunities? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/research-opportunities)
+## Online Assessments (OAs)
+
+### CodeSignal
+
+

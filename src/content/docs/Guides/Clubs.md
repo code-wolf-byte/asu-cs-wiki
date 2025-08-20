@@ -1,14 +1,113 @@
 ---
-title: Clubs & Orgs
-description: Club and org information for ASU CS students.
+title: Student Organizations
+description: Connect with ASU CS student organizations and clubs
 ---
 
-Hello Sun-Devils! Welcome to the ASU CS Wiki. This is a collection of guides, resources, and information for ASU CS students.
+## why join?
 
-Looking for resume templates? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/resume-templates)
+- Meet other people and make friends (touch grass)
+- Learn about new things through workshops and industry talks
+- Build projects with others outside the classroom
+- Develop professional and leadership skills
+- Network with industry professionals and recruiters
 
-Looking for internship opportunities? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/internship-opportunities)
+## CS orgs at ASU
 
-Looking for club information? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/clubs-and-orgs)
+alphabetical order, not comprehensive
 
-Looking for research opportunities? [Click here](https://github.com/asusoda/asu-cs-wiki/tree/main/src/content/docs/guides/research-opportunities)
+:::note
+Feel like we forgot something? Contribute by clicking "Edit
+page" at the bottom.
+:::
+
+<details>
+<summary>ACM Student Chapter</summary>
+
+ASU's chapter of ACM, the world's largest computing society. They host tech talks, workshops, and networking events for anyone interested in CS.
+
+- Website: [asu.acm.org](https://asu.acm.org/)
+
+</details>
+
+<details>
+<summary>The AI Society</summary>
+
+Learn about AI and machine learning through hands-on workshops,
+projects, and talks.
+
+- Website: [ais-asu.com](https://www.ais-asu.com/)
+
+</details>
+
+<details>
+<summary>Google Developer Student Club (GDSC)</summary>
+
+Google's official student developer club at ASU. Learn about Google technologies, build cool projects, and get access to Google resources and workshops.
+
+- Website: [asudsc.com](https://www.asudsc.com/)
+
+</details>
+
+<details>
+<summary>Hacker Devils</summary>
+
+Become technical interview-ready with Hacker Devils! They focus on helping students prepare for technical interviews by practicing Leetcode problems. Hosts sessions for beginners & the more experienced alike.
+
+- Linktree: [linktr.ee/asuhackerdevils](https://linktr.ee/asuhackerdevils)
+
+</details>
+
+<details>
+<summary>Linux Users Group (ASULUG)</summary>
+
+The Linux Users Group at ASU brings together Linux and free-and-open-source software (FOSS) enthusiasts. They help new users get started with Linux, learn programming languages, and host multiple events throughout the year.
+
+- Website: [new.asulug.org](https://new.asulug.org/)
+
+</details>
+
+<details>
+<summary>The Software Developers Association (SoDA)</summary>
+
+The oldest, largest, and most active CS club on campus. SoDA hosts workshops,
+hackathons, and brings in industry professionals for info sessions.
+
+- Website: [thesoda.io](https://thesoda.io)
+
+</details>
+
+<details>
+<summary>sunhacks</summary>
+
+ASU's largest hackathon, and the only one sponsored by MLH. Build something cool in 24 hours, meet other hackers, and compete for prizes. Great for first-time hackathon participants!
+
+- Website: [sunhacks.io](https://sunhacks.io/)
+
+</details>
+
+<details>
+<summary>Video Game Development Club</summary>
+
+Make games with other students! They work on collaborative projects throughout the year, teach game engines like Unity, and host game jams.
+
+- Sun Devil Central: [Video Game Development Club](https://sundevilcentral.eoss.asu.edu/vgdc/home/)
+
+</details>
+
+<details>
+<summary>Women in Computer Science (WiCS)</summary>
+
+A supportive community for women in tech at ASU. WiCS hosts study sessions, professional development workshops, and social events. Open to anyone who supports women in computing!
+
+- Website: [asuwics.org](https://asuwics.org/)
+
+</details>
+
+## how to get involved
+
+- Most, if not all, clubs have Discord servers you can join to chat,
+  ask questions, and get event announcements. You can usually find
+  up-to-date invite links on their websites
+- Attend a few meetings to see if you vibe with it
+- Consider applying as an organizer to help run things and contribute to the community!
+
