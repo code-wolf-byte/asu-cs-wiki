@@ -4,6 +4,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/asusoda/asu-cs-wiki?color=orange)](https://github.com/asusoda/asu-cs-wiki/graphs/contributors)
 [![GitHub issues](https://img.shields.io/github/issues/asusoda/asu-cs-wiki)](https://github.com/asusoda/asu-cs-wiki/issues)
 [![GitHub stars](https://img.shields.io/github/stars/asusoda/asu-cs-wiki?style=social)](https://github.com/asusoda/asu-cs-wiki/stargazers)
+<a href="https://deepwiki.com/asusoda/asu-cs-wiki"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
 
 **The community-driven knowledge hub for ASU Computer Science students.** 🔱🥤
 
