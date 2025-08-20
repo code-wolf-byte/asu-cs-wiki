@@ -1,0 +1,54 @@
+---
+import { Card } from '@astrojs/starlight/components';
+
+interface Props {
+    icon?: string;
+    title: string;
+    href: string;
+    description: string;
+}
+
+const { icon, title, href, description } = Astro.props;
+---
+
+<a href={href} class="icon-link-card">
+    <Card title={title} icon={icon}>
+        {description}
+    </Card>
+</a>
+
+<style>
+    .icon-link-card {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+        height: 100%;
+    }
+
+    /* Override the Card component's color variables */
+    .icon-link-card:nth-child(4n + 1) :global(.card) {
+        --sl-card-border: var(--sl-color-orange) !important;
+        --sl-card-bg: var(--sl-color-orange-low) !important;
+    }
+    
+    .icon-link-card:nth-child(4n + 2) :global(.card) {
+        --sl-card-border: var(--sl-color-purple) !important;
+        --sl-card-bg: var(--sl-color-purple-low) !important;
+    }
+    
+    .icon-link-card:nth-child(4n + 3) :global(.card) {
+        --sl-card-border: var(--sl-color-green) !important;
+        --sl-card-bg: var(--sl-color-green-low) !important;
+    }
+    
+    .icon-link-card:nth-child(4n + 4) :global(.card) {
+        --sl-card-border: var(--sl-color-red) !important;
+        --sl-card-bg: var(--sl-color-red-low) !important;
+    }
+    
+    /* Hover effect - make border match the icon color */
+    .icon-link-card:hover :global(.card) {
+        border-color: var(--sl-card-border) !important;
+        transition: border-color 0.2s ease-in-out;
+    }
+</style>
