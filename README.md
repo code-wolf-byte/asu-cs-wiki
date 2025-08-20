@@ -22,7 +22,7 @@
 <!-- ## 🌟 Key Features
 
 ### 📖 **Interactive Course Browser**
-- ** CSE classes** from 110 to advanced electives
+- **CSE classes** from 110 to advanced electives
 - **Prerequisite mapping** and course progression visualization
 - **Student reviews** and survival tips for each course
 - **Real-time updates** from the community
