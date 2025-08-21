@@ -66,14 +66,3 @@ jobs:
           echo "Building the project..."
           pnpm run build || { echo "Failed to build the project"; exit 1; }
           
-          # Restart the React website service
-          echo "Restarting the React website service..."
-          sudo systemctl daemon-reload || { echo "Failed to reload systemd"; exit 1; }
-          sudo systemctl restart react-website.service || { echo "Failed to restart react-website.service"; exit 1; }
-          sudo systemctl enable react-website.service || { echo "Failed to enable react-website.service"; exit 1; }
-          
-          # Check the status of the service
-          echo "Checking the status of the React website service..."
-          sudo systemctl status react-website.service --no-pager || { echo "React website service is not running"; exit 1; }
-          
-          echo "Deployment complete. Website should be hosted on http://localhost:3000"
