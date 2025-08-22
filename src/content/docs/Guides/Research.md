@@ -10,6 +10,6 @@ Getting into research might seem intimidating at first, but it’s actually more
 Keep an eye out for lab opportunities through your school emails and network with grad/PhD students in your target fields. Coffee chats are a great way to learn more about their research and identify key areas you want to explore further and help you broaden your persective and interests.
 
 # Quick Links
-[ASU Research Academy Faculty](https://ke.asu.edu/researchacademy/faculty/)
+- [ASU Research Academy Faculty](https://ke.asu.edu/researchacademy/faculty/)
 
-[SCAI Research Labs](https://scai.engineering.asu.edu/research-labs/)
+- [SCAI Research Labs](https://scai.engineering.asu.edu/research-labs/)
