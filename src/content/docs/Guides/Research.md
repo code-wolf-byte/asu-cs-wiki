@@ -11,4 +11,5 @@ Keep an eye out for lab opportunities through your school emails and network wit
 
 # Quick Links
 [ASU Research Academy Faculty](https://ke.asu.edu/researchacademy/faculty/)
+
 [SCAI Research Labs](https://scai.engineering.asu.edu/research-labs/)
