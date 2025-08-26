@@ -1,0 +1,62 @@
+---
+import coursesData from '../data/courses.json';
+
+// Get the current file path and extract course code from filename
+const url = Astro.url.pathname;
+const pathParts = url.split('/').filter(part => part.length > 0);
+const filename = pathParts[pathParts.length - 1] || '';
+const courseCode = filename.replace(/\.(md|mdx|html)$/, '')
+  .split('-')
+  .map(part => part.toUpperCase())
+  .join(' ');
+
+// Find course data by searching through all categories
+function findCourseByCode(code: string) {
+  for (const [category, courses] of Object.entries(coursesData.catalog)) {
+    const course = courses.find(c => c.name.startsWith(code));
+    if (course) return course;
+  }
+  return null;
+}
+
+const courseData = findCourseByCode(courseCode);
+
+// Use course data if available, otherwise fall back to defaults
+const credits = courseData?.credits || "3";
+const offeredIn = courseData?.offeredIn || "Fall, Spring, and Summer";
+
+// Format prerequisites as simple array for rendering
+const prerequisites = courseData?.prerequisites || [];
+---
+
+<table>
+  <tr>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><strong>Offered in:</strong></td>
+    <td>{offeredIn}</td>
+  </tr>
+  <tr>
+    <td><strong>Credits:</strong></td>
+    <td>{credits}</td>
+  </tr>
+  <tr>
+    <td><strong>Prerequisites:</strong></td>
+    <td>
+      {prerequisites.length === 0 ? 'None' : 
+        prerequisites.map((prereq, index) => {
+          const prereqData = findCourseByCode(prereq);
+          const href = prereqData?.link || `/courses/${prereq.toLowerCase().replace(/\s+/g, '-')}`;
+          return (
+            <>
+              <a href={href}>{prereq}</a>
+              {index < prerequisites.length - 1 ? ', ' : ''}
+            </>
+          );
+        })
+      }
+    </td>
+  </tr>
+</table>
