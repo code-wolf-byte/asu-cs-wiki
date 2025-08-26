@@ -42,6 +42,24 @@
         "link": "/courses/mat-243",
         "prerequisites": ["MAT 265"],
         "prerequisitesFor": ["CSE 310"]
+      },
+      {
+        "name": "MAT 265 - Calculus for Engineers I",
+        "link": "/courses/mat-265",
+        "prerequisites": [],
+        "prerequisitesFor": ["MAT 243", "MAT 266"]
+      },
+      {
+        "name": "MAT 266 - Calculus for Engineers II",
+        "link": "/courses/mat-266",
+        "prerequisites": ["MAT 265"],
+        "prerequisitesFor": ["MAT 267", "MAT 343", "IEE 380"]
+      },
+      {
+        "name": "MAT 267/CSE 259 - Calculus III/Logic in Computer Science",
+        "link": "/courses/mat-267-cse-259",
+        "prerequisites": ["MAT 266"],
+        "prerequisitesFor": []
       }
     ],
     "Core (3xx - 4xx)": [
@@ -91,7 +109,13 @@
         "name": "MAT 343 - Applied Linear Algebra",
         "link": "/courses/mat-343",
         "prerequisites": ["MAT 266"],
-        "prerequisitesFor": ["CSE 475"]
+        "prerequisitesFor": ["CSE 472", "CSE 475"]
+      },
+      {
+        "name": "IEE 380 - Probability and Statistics for Engineering Problem Solving",
+        "link": "/courses/iee-380",
+        "prerequisites": ["MAT 266"],
+        "prerequisitesFor": ["CSE 472"]
       }
     ],
     "Mandatory Electives": [
