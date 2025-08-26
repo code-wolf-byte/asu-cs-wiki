@@ -2,18 +2,23 @@
 import { defineConfig, passthroughImageService } from "astro/config";
 import starlight from "@astrojs/starlight";
 
+import tailwindcss from "@tailwindcss/vite";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://wiki.thesoda.io",
+
   image: {
     service: passthroughImageService(),
   },
+
   integrations: [
     starlight({
       title: "ASU CS Wiki",
       customCss: [
         "@fontsource-variable/space-grotesk",
         "./src/styles/custom.css",
+        "./src/styles/global.css",
       ],
       social: [
         {
@@ -42,4 +47,8 @@ export default defineConfig({
       },
     }),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
