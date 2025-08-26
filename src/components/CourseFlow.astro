@@ -2,14 +2,14 @@
 // Interactive CS Course Flow Component
 // Displays course dependencies with hover interactions
 
-import { getAugmentedCoursesData } from '../utils/courses.ts';
+import { getAugmentedCoursesData, getCourseData } from '../utils/courses.ts';
 
 const coursesData = getAugmentedCoursesData();
 
 // Statically import all course files
-const courseFiles = import.meta.glob('../content/docs/Courses/*.md', { eager: true });
+const courseFiles = import.meta.glob('../content/docs/Courses/*.{md,mdx}', { eager: true });
 const existingCourseFiles = Object.keys(courseFiles).map(path => 
-  path.split('/').pop()?.replace('.md', '')
+  path.split('/').pop()?.replace(/\.(md|mdx)$/, '')
 );
 
 interface Course {
@@ -24,14 +24,7 @@ function doesCourseHaveFile(course: Course): boolean {
   return existingCourseFiles.includes(courseFileName);
 }
 
-// Find course data by code
-function findCourseByCode(code: string): Course | null {
-  for (const [group, items] of Object.entries(coursesData.catalog)) {
-    const course = items.find((item: Course) => getCode(item.name) === code);
-    if (course) return course;
-  }
-  return null;
-}
+// Note: Using getCourseData from utils for course lookup
 
 const termOrder = Object.keys(coursesData.termLayout);
 const termLayout = coursesData.termLayout;
@@ -78,7 +71,7 @@ const componentId = `course-flow-${Math.random().toString(36).slice(2, 9)}`;
           const code = getCode(label);
           const displayLabel = label.includes(code) ? null : label;
           
-          const course = findCourseByCode(code);
+          const course = getCourseData(code);
           const hasFile = course ? doesCourseHaveFile(course) : false;
           const href = course && hasFile ? course.link : null;
           
@@ -96,7 +89,7 @@ const componentId = `course-flow-${Math.random().toString(36).slice(2, 9)}`;
           <div class="or-block">
             <div class="or-courses">
               {spring6OrGroup.map((courseCode, index) => {
-                const course = findCourseByCode(courseCode);
+                const course = getCourseData(courseCode);
                 const hasFile = course ? doesCourseHaveFile(course) : false;
                 const href = course && hasFile ? course.link : null;
                 

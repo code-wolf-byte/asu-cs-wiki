@@ -39,7 +39,7 @@ const prerequisites = courseData?.prerequisites || [];
     <td>
       {prerequisites.length === 0 ? 'None' : 
         prerequisites.map((prereq, index) => {
-          const prereqData = findCourseByCode(prereq);
+          const prereqData = getCourseData(prereq);
           const href = prereqData?.link || `/courses/${prereq.toLowerCase().replace(/\s+/g, '-')}`;
           return (
             <>

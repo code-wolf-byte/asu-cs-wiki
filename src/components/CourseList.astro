@@ -9,9 +9,9 @@ import { getAugmentedCoursesData } from '../utils/courses.ts';
 const coursesData = getAugmentedCoursesData();
 
 // Statically import all course files
-const courseFiles = import.meta.glob('../content/docs/Courses/*.md', { eager: true });
+const courseFiles = import.meta.glob('../content/docs/Courses/*.{md,mdx}', { eager: true });
 const existingCourseFiles = Object.keys(courseFiles).map(path => 
-  path.split('/').pop()?.replace('.md', '')
+  path.split('/').pop()?.replace(/\.(md|mdx)$/, '')
 );
 
 interface Course {
