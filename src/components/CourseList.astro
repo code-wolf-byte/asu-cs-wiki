@@ -27,8 +27,7 @@ function doesCourseHaveFile(course: Course): boolean {
 }
 ---
 
-  {coursesData.map((courseCategory: CourseCategory) => 
-    Object.entries(courseCategory).map(([category, courses]) => (
+  {Object.entries(coursesData.catalog).map(([category, courses]) => (
       <div>
         <AnchorHeading level="2" id={category.toLowerCase()}>{category}</AnchorHeading>
         <div class="course-buttons">
@@ -42,8 +41,7 @@ function doesCourseHaveFile(course: Course): boolean {
           ))}
         </div>
       </div>
-    ))
-  )}
+    ))}
 
   <style>
     .course-buttons {

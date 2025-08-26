@@ -1,5 +1,16 @@
-[
-  {
+{
+  "termLayout": {
+    "Fall-1": ["ENG 101", "FSE 100", "CSE 110", "ASU 101", "MAT 265", "HU/SB"],
+    "Spring-2": ["ENG 102", "SQ LAB SCI", "CSE 205", "MAT 266", "HU or SB & AA"],
+    "Fall-3": ["SQ LAB SCI", "EEE 120", "CSE 240", "MAT 267 or CSE 259", "MAT 243"],
+    "Spring-4": ["SQ LAB SCI", "CSE 230", "CSE 310", "HU or SB & AA", "General Elective"],
+    "Fall-5": ["CSE 301", "CSE 365", "CSE 355", "CSE 360", "IEE 380", "HU or SB"],
+    "Spring-6": ["CSE 330", "CSE 340", "MAT 343", "Upper Div HU/SB"],
+    "Fall-7": ["CSE 4XX", "CSE 4XX", "Tech Elect", "CSE 485"],
+    "Spring-8": ["CSE 4XX", "CSE 4XX", "Tech Elect", "CSE 486"]
+  },
+  "spring6OrGroup": ["CSE 412", "CSE 434", "CSE 445"],
+  "catalog": {
     "Core (1xx - 2xx)": [
       {
         "name": "CSE 110 - Principles of Programming",
@@ -217,4 +228,4 @@
       }
     ]
   }
-]
+}
