@@ -2,7 +2,9 @@
 // Interactive CS Course Flow Component
 // Displays course dependencies with hover interactions
 
-import coursesData from '../data/courses.json';
+import { getAugmentedCoursesData } from '../utils/courses.ts';
+
+const coursesData = getAugmentedCoursesData();
 
 // Statically import all course files
 const courseFiles = import.meta.glob('../content/docs/Courses/*.md', { eager: true });
@@ -355,7 +357,7 @@ const componentId = `course-flow-${Math.random().toString(36).slice(2, 9)}`;
 </style>
 
 <script define:vars={{ componentId, coursesData }}>
-  // Course catalog from JSON file
+  // Course catalog from augmented JSON data
   const catalog = coursesData.catalog;
 
   // Helper to extract course code from label

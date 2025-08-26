@@ -4,7 +4,9 @@ import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
 import AnchorHeading from '@astrojs/starlight/components/AnchorHeading.astro';
 
 // Import the courses data
-import coursesData from '../data/courses.json';
+import { getAugmentedCoursesData } from '../utils/courses.ts';
+
+const coursesData = getAugmentedCoursesData();
 
 // Statically import all course files
 const courseFiles = import.meta.glob('../content/docs/Courses/*.md', { eager: true });

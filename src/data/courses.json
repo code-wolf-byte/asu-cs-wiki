@@ -1,197 +1,294 @@
 {
   "termLayout": {
-    "Fall-1": ["ENG 101", "FSE 100", "CSE 110", "ASU 101", "MAT 265", "HU/SB"],
-    "Spring-2": ["ENG 102", "SQ LAB SCI", "CSE 205", "MAT 266", "HU or SB & AA"],
-    "Fall-3": ["SQ LAB SCI", "EEE 120", "CSE 240", "MAT 267 or CSE 259", "MAT 243"],
-    "Spring-4": ["SQ LAB SCI", "CSE 230", "CSE 310", "HU or SB & AA", "General Elective"],
-    "Fall-5": ["CSE 301", "CSE 365", "CSE 355", "CSE 360", "IEE 380", "HU or SB"],
-    "Spring-6": ["CSE 330", "CSE 340", "MAT 343", "Upper Div HU/SB"],
-    "Fall-7": ["CSE 4XX", "CSE 4XX", "Tech Elect", "CSE 485"],
-    "Spring-8": ["CSE 4XX", "CSE 4XX", "Tech Elect", "CSE 486"]
+    "Fall-1": [
+      "ENG 101",
+      "FSE 100",
+      "CSE 110",
+      "ASU 101",
+      "MAT 265",
+      "HU/SB"
+    ],
+    "Spring-2": [
+      "ENG 102",
+      "SQ LAB SCI",
+      "CSE 205",
+      "MAT 266",
+      "HU or SB & AA"
+    ],
+    "Fall-3": [
+      "SQ LAB SCI",
+      "EEE 120",
+      "CSE 240",
+      "MAT 267 or CSE 259",
+      "MAT 243"
+    ],
+    "Spring-4": [
+      "SQ LAB SCI",
+      "CSE 230",
+      "CSE 310",
+      "HU or SB & AA",
+      "General Elective"
+    ],
+    "Fall-5": [
+      "CSE 301",
+      "CSE 365",
+      "CSE 355",
+      "CSE 360",
+      "IEE 380",
+      "HU or SB"
+    ],
+    "Spring-6": [
+      "CSE 330",
+      "CSE 340",
+      "MAT 343",
+      "Upper Div HU/SB"
+    ],
+    "Fall-7": [
+      "CSE 4XX",
+      "CSE 4XX",
+      "Tech Elect",
+      "CSE 485"
+    ],
+    "Spring-8": [
+      "CSE 4XX",
+      "CSE 4XX",
+      "Tech Elect",
+      "CSE 486"
+    ]
   },
-  "spring6OrGroup": ["CSE 412", "CSE 434", "CSE 445"],
+  "spring6OrGroup": [
+    "CSE 412",
+    "CSE 434",
+    "CSE 445"
+  ],
   "catalog": {
     "Core (1xx - 2xx)": [
       {
         "name": "CSE 110 - Principles of Programming",
         "link": "/courses/cse-110",
-        "prerequisites": [],
-        "prerequisitesFor": ["CSE 205", "CSE 230"]
+        "prerequisites": []
       },
       {
         "name": "FSE 100 - Intro to Engineering",
         "link": "/courses/fse-100",
-        "prerequisites": [],
-        "prerequisitesFor": ["CSE 301"]
+        "prerequisites": []
       },
       {
         "name": "EEE 120 - Digital Design Fundamentals",
         "link": "/courses/eee-120",
-        "prerequisites": [],
-        "prerequisitesFor": ["CSE 230"]
+        "prerequisites": []
       },
       {
         "name": "CSE 205 - Object-Oriented Programming in Java",
         "link": "/courses/cse-205",
-        "prerequisites": ["CSE 110"],
-        "prerequisitesFor": ["CSE 301", "CSE 310", "CSE 360"]
+        "prerequisites": [
+          "CSE 110"
+        ]
       },
       {
         "name": "CSE 230 - Computer Organization and Architecture",
         "link": "/courses/cse-230",
-        "prerequisites": ["CSE 110", "EEE 120"],
-        "prerequisitesFor": ["CSE 330", "CSE 340"]
+        "prerequisites": [
+          "CSE 110",
+          "EEE 120"
+        ]
       },
       {
         "name": "CSE 240 - Introduction to Programming Languages",
         "link": "/courses/cse-240",
-        "prerequisites": ["CSE 205"],
-        "prerequisitesFor": ["CSE 310", "CSE 360"]
+        "prerequisites": [
+          "CSE 205"
+        ]
       },
       {
         "name": "MAT 243 - Discrete Mathematics",
         "link": "/courses/mat-243",
-        "prerequisites": ["MAT 265"],
-        "prerequisitesFor": ["CSE 310"]
+        "prerequisites": [
+          "MAT 265"
+        ]
       },
       {
         "name": "MAT 265 - Calculus for Engineers I",
         "link": "/courses/mat-265",
-        "prerequisites": [],
-        "prerequisitesFor": ["MAT 243", "MAT 266"]
+        "prerequisites": []
       },
       {
         "name": "MAT 266 - Calculus for Engineers II",
         "link": "/courses/mat-266",
-        "prerequisites": ["MAT 265"],
-        "prerequisitesFor": ["MAT 267", "MAT 343", "IEE 380"]
+        "prerequisites": [
+          "MAT 265"
+        ]
       },
       {
         "name": "MAT 267 - Calculus III",
         "link": "/courses/mat-267",
-        "prerequisites": ["MAT 266"],
-        "prerequisitesFor": []
+        "prerequisites": [
+          "MAT 266"
+        ]
       },
       {
         "name": "CSE 259 - Logic in Computer Science",
         "link": "/courses/cse-259",
-        "prerequisites": ["CSE 205"],
-        "prerequisitesFor": []
+        "prerequisites": [
+          "CSE 205"
+        ]
       }
     ],
     "Core (3xx - 4xx)": [
       {
         "name": "CSE 301 - Computing Ethics",
         "link": "/courses/cse-301",
-        "prerequisites": ["CSE 205", "FSE 100"],
-        "prerequisitesFor": ["CSE 485"]
+        "prerequisites": [
+          "CSE 205",
+          "FSE 100"
+        ]
       },
       {
         "name": "CSE 310 - Data Structures and Algorithms",
         "link": "/courses/cse-310",
-        "prerequisites": ["CSE 205", "MAT 243"],
-        "prerequisitesFor": ["CSE 330", "CSE 340", "CSE 355"]
+        "prerequisites": [
+          "CSE 205",
+          "MAT 243"
+        ]
       },
       {
         "name": "CSE 330 - Operating Systems",
         "link": "/courses/cse-330",
-        "prerequisites": ["CSE 310", "CSE 230"],
-        "prerequisitesFor": ["CSE 485"]
+        "prerequisites": [
+          "CSE 310",
+          "CSE 230"
+        ]
       },
       {
         "name": "CSE 340 - Principles of Programming Languages ",
         "link": "/courses/cse-340",
-        "prerequisites": ["CSE 310", "CSE 230"],
-        "prerequisitesFor": ["CSE 485"]
+        "prerequisites": [
+          "CSE 310",
+          "CSE 230"
+        ]
       },
       {
         "name": "CSE 355 - Theoretical Computer Science",
         "link": "/courses/cse-355",
-        "prerequisites": ["CSE 310"],
-        "prerequisitesFor": ["CSE 485"]
+        "prerequisites": [
+          "CSE 310"
+        ]
       },
       {
         "name": "CSE 360 - Software Engineering",
         "link": "/courses/cse-360",
-        "prerequisites": ["CSE 240"],
-        "prerequisitesFor": ["CSE 485"]
+        "prerequisites": [
+          "CSE 240"
+        ]
       },
       {
         "name": "CSE 365 - Information Assurance",
         "link": "/courses/cse-365",
-        "prerequisites": ["CSE 230", "CSE 310"],
-        "prerequisitesFor": []
+        "prerequisites": [
+          "CSE 230",
+          "CSE 310"
+        ]
       },
       {
         "name": "MAT 343 - Applied Linear Algebra",
         "link": "/courses/mat-343",
-        "prerequisites": ["MAT 266"],
-        "prerequisitesFor": ["CSE 472", "CSE 475"]
+        "prerequisites": [
+          "MAT 266"
+        ]
       },
       {
         "name": "IEE 380 - Probability and Statistics for Engineering Problem Solving",
         "link": "/courses/iee-380",
-        "prerequisites": ["MAT 266"],
-        "prerequisitesFor": ["CSE 472"]
+        "prerequisites": [
+          "MAT 266"
+        ]
       }
     ],
     "Mandatory Electives": [
       {
         "name": "CSE 412 - Database Management",
         "link": "/courses/cse-412",
-        "prerequisites": ["CSE 310"]
+        "prerequisites": [
+          "CSE 310"
+        ]
       },
       {
         "name": "CSE 434 - Computer Networks",
         "link": "/courses/cse-434",
-        "prerequisites": ["CSE 310", "CSE 330"]
+        "prerequisites": [
+          "CSE 310",
+          "CSE 330"
+        ]
       },
       {
         "name": "CSE 445 - Software Engineering",
         "link": "/courses/cse-445",
-        "prerequisites": ["CSE 310", "CSE 360"]
+        "prerequisites": [
+          "CSE 310",
+          "CSE 360"
+        ]
       }
     ],
     "Electives": [
       {
         "name": "CSE 463 - Human Computer Interaction",
         "link": "/courses/cse-463",
-        "prerequisites": ["CSE 310"]
+        "prerequisites": [
+          "CSE 310"
+        ]
       },
       {
         "name": "CSE 464 - QA and Testing",
         "link": "/courses/cse-464",
-        "prerequisites": ["CSE 310", "CSE 360"]
+        "prerequisites": [
+          "CSE 310",
+          "CSE 360"
+        ]
       },
       {
         "name": "CSE 466 - Computer Systems Security",
         "link": "/courses/cse-466",
-        "prerequisites": ["CSE 310", "CSE 365"]
+        "prerequisites": [
+          "CSE 310",
+          "CSE 365"
+        ]
       },
       {
         "name": "CSE 471 - Intro to Artificial Intelligence",
         "link": "/courses/cse-471",
-        "prerequisites": ["CSE 310"]
+        "prerequisites": [
+          "CSE 310"
+        ]
       },
       {
         "name": "CSE 472 - Social Media Mining",
         "link": "/courses/cse-472",
-        "prerequisites": ["CSE 310", "IEE 380", "MAT 343"]
+        "prerequisites": [
+          "CSE 310",
+          "IEE 380",
+          "MAT 343"
+        ]
       },
       {
         "name": "CSE 475 - Intro to Machine Learning",
         "link": "/courses/cse-475",
-        "prerequisites": ["CSE 205"]
+        "prerequisites": [
+          "CSE 205"
+        ]
       },
       {
         "name": "CSE 476 - Intro to Natural Language Processing",
         "link": "/courses/cse-476",
-        "prerequisites": ["CSE 310"]
+        "prerequisites": [
+          "CSE 310"
+        ]
       },
       {
         "name": "CSE 478 - Intro to Data Visualization",
         "link": "/courses/cse-478",
-        "prerequisites": ["CSE 310"]
+        "prerequisites": [
+          "CSE 310"
+        ]
       }
     ],
     "Capstone": [
@@ -205,26 +302,31 @@
           "CSE 355",
           "CSE 360",
           "ENG 107"
-        ],
-        "prerequisitesFor": ["CSE 486"]
+        ]
       },
       {
         "name": "CSE 486 - Capstone 2",
         "link": "/courses/cse-486",
-        "prerequisites": ["CSE 485", "ENG 107"],
-        "prerequisitesFor": []
+        "prerequisites": [
+          "CSE 485",
+          "ENG 107"
+        ]
       }
     ],
     "Special": [
       {
         "name": "CSE 494 - Internship",
         "link": "/courses/cse-494",
-        "prerequisites": ["CSE 205"]
+        "prerequisites": [
+          "CSE 205"
+        ]
       },
       {
         "name": "CSE 499 - Independent Study",
         "link": "/courses/cse-499",
-        "prerequisites": ["CSE 205"]
+        "prerequisites": [
+          "CSE 205"
+        ]
       }
     ]
   }

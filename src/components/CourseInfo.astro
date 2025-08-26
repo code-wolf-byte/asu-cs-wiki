@@ -1,5 +1,5 @@
 ---
-import coursesData from '../data/courses.json';
+import { getCourseData } from '../utils/courses.ts';
 
 // Get the current file path and extract course code from filename
 const url = Astro.url.pathname;
@@ -10,16 +10,8 @@ const courseCode = filename.replace(/\.(md|mdx|html)$/, '')
   .map(part => part.toUpperCase())
   .join(' ');
 
-// Find course data by searching through all categories
-function findCourseByCode(code: string) {
-  for (const [category, courses] of Object.entries(coursesData.catalog)) {
-    const course = courses.find(c => c.name.startsWith(code));
-    if (course) return course;
-  }
-  return null;
-}
-
-const courseData = findCourseByCode(courseCode);
+// Get course data
+const courseData = getCourseData(courseCode);
 
 // Use course data if available, otherwise fall back to defaults
 const credits = courseData?.credits || "3";
