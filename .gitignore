@@ -21,6 +21,3 @@ pnpm-debug.log*
 .DS_Store
 
 specs/
-
-# editor configs 
-.vscode 
