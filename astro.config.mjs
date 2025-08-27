@@ -20,6 +20,9 @@ export default defineConfig({
         "./src/styles/custom.css",
         "./src/styles/global.css",
       ],
+      components: {
+        Header: './src/components/Header.astro',
+      },
       social: [
         {
           icon: "github",
