@@ -1,9 +1,8 @@
 // @ts-check
 import { defineConfig, passthroughImageService } from "astro/config";
 import starlight from "@astrojs/starlight";
-
 import tailwindcss from "@tailwindcss/vite";
-
+import mermaid from "astro-mermaid";
 // https://astro.build/config
 export default defineConfig({
   site: "https://wiki.thesoda.io",
@@ -49,6 +48,11 @@ export default defineConfig({
         baseUrl: "https://github.com/asusoda/asu-cs-wiki/edit/main",
       },
     }),
+    mermaid(
+      {
+        theme: "forest"
+      }
+    ),
   ],
 
   vite: {
