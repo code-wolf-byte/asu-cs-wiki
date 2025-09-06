@@ -33,14 +33,24 @@ function doesCourseHaveFile(course: Course): boolean {
       <div>
         <AnchorHeading level="2" id={category.toLowerCase()}>{category}</AnchorHeading>
         <div class="course-buttons">
-          {courses.map((course) => (
-            <a 
-              href={doesCourseHaveFile(course) ? course.link : ''} 
-              class={`course-button ${doesCourseHaveFile(course) ? 'has-file' : 'file-not-found'}`}
-            >
-              {course.name}
-            </a>
-          ))}
+          {courses.map((course) => {
+            if (doesCourseHaveFile(course)) {
+              return (
+                <a 
+                  href={course.link} 
+                  class="course-button has-file"
+                >
+                  {course.name}
+                </a>
+              );
+            } else {
+              return (
+                <span class="course-button file-not-found">
+                  {course.name}
+                </span>
+              );
+            }
+          })}
         </div>
       </div>
     ))}
@@ -56,11 +66,11 @@ function doesCourseHaveFile(course: Course): boolean {
     .course-button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #222;
-      border: 1px solid #333;
+      background-color: var(--sl-color-gray-6);
+      border: 1px solid var(--sl-color-gray-5);
       border-radius: 50px;
       text-decoration: none;
-      color: white;
+      color: var(--sl-color-white);
       font-weight: normal;
       text-align: center;
       min-width: 100px;
@@ -68,14 +78,15 @@ function doesCourseHaveFile(course: Course): boolean {
     }
 
     .course-button.has-file:hover {
-      background-color: #444;
+      background-color: var(--sl-color-gray-5);
       transition: background-color 0.1s ease-in-out;
     }
 
     .file-not-found {
-      background-color: #333;
-      opacity: 0.8;
+      opacity: 0.25;
       cursor: not-allowed;
+      border-style: dashed;
+      border-color: var(--sl-color-gray-4);
     }
 
     .capstone-link {
