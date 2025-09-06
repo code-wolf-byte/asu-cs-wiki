@@ -289,6 +289,31 @@
         "prerequisites": [
           "CSE 310"
         ]
+      },
+      {
+        "name": "DAT 300 - Mathematical Tools for Data Science",
+        "link": "/courses/dat-300",
+        "prerequisites": [
+          "MAT 266",
+          "MAT 343"
+        ]
+      },
+      {
+        "name": "DAT 301 - Exploring Data in R and Python",
+        "link": "/courses/dat-301",
+        "prerequisites": [
+          "MAT 265",
+          "MAT 266",
+          "MAT 343"
+        ]
+      },
+      {
+        "name": "DAT 402 - Machine Learning for Data Science",
+        "link": "/courses/dat-402",
+        "prerequisites": [
+          "DAT 401 or STP 420",
+          "STP 421 or ACT 415"
+        ]
       }
     ],
     "Capstone": [
