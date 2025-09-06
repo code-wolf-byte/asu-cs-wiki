@@ -314,6 +314,13 @@
           "DAT 401 or STP 420",
           "STP 421 or ACT 415"
         ]
+      },
+      {
+        "name": "DAT 494 - Special Topics",
+        "link": "/courses/dat-494",
+        "prerequisites": [
+          "Varies by topic"
+        ]
       }
     ],
     "Capstone": [
